@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1449834308801
+Build-Jdk: 1.7.0_91
+Built-By: seti
+Bundle-Activator: irrcyn.internal.CyActivator
+Bundle-ManifestVersion: 2
+Bundle-Name: irrcyn.PIDtoSIFtoGRAPH [irrcyn]
+Bundle-SymbolicName: irrcyn.PIDtoSIFtoGRAPH
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Import-Package: javax.swing,org.cytoscape.application;version="[3.0,4)",
+ org.cytoscape.application.swing;version="[3.0,4)",org.cytoscape.service
+ .util;version="[3.0,4)",org.cytoscape.view.model;version="[3.0,4)",org.
+ osgi.framework;version="[1.5,2)"
+Tool: Bnd-1.50.0
