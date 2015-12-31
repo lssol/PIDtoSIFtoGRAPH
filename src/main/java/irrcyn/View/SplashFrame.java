@@ -1,4 +1,4 @@
-package irrcyn.internal.View;
+package irrcyn.View;
 
 import javax.swing.*;
 import java.awt.*;

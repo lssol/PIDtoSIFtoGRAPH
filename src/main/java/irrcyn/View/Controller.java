@@ -1,12 +1,33 @@
-package irrcyn.internal.View;
+package irrcyn.View;
 
 
+
+import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
+import org.cytoscape.application.swing.CytoPanelComponent;
+import org.cytoscape.model.CyNetwork;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileNotFoundException;
 
+import de.bioquant.cytoscape.pidfileconverter.Exceptions.FileParsingException;
+import de.bioquant.cytoscape.pidfileconverter.Exceptions.NoValidManagerSetException;
+import de.bioquant.cytoscape.pidfileconverter.FileReader.FileReader;
+import de.bioquant.cytoscape.pidfileconverter.FileReader.PidFileReader;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.ExtPreferredSymbolWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.FileWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.IdWithPreferredSymbolWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.ModificationsWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.NodeTypeAttributeForUniprotWithModWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.PidForUniprotWithModWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.PreferredSymbolForUniprotWithModWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.SifFileWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.UniprotIdForUniprotWithModWriter;
+import de.bioquant.cytoscape.pidfileconverter.FileWriter.MemberExpansion.SifFileExpandMolWriter;
+import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
 /**
 
 
@@ -58,14 +79,13 @@ public class Controller extends JFrame implements ActionListener{
 		this.mainframe = mainframe;
 	}
 
-
 	/**
 	 * This method receives a set of ActionEvents denoted in the viewframes (mainframe, affy and illumina views).
 	 * The ActionEvents then define what sort of action is to be carried out
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String command = e.getActionCommand();
+	/*	String command = e.getActionCommand();
 
 		// if user clicks browse button
 		if (command.equals("Browse")) {
@@ -142,7 +162,7 @@ public class Controller extends JFrame implements ActionListener{
 					loadNodeAttributeFile(getTargetPREFERRED_SYMBOL_EXTpath());
 //					// load the PREFERRED_SYMBOL_EXT .NA file
 //					loadNodeAttributeFileFromGraph(getTargetPREFERRED_SYMBOL_EXTpath());
-					// load the PID .NA file
+					// load the PID .NA filecreateNetworkTaskFactory
 					loadNodeAttributeFile(getTargetPIDpath());
 					// load the ID_PREF .NA file
 					loadNodeAttributeFile(getTargetID_PREFpath());
@@ -174,97 +194,95 @@ public class Controller extends JFrame implements ActionListener{
 				}
 			}
 
-		}
+		}*/
 	}
 
-
-	/**
-	 * This method creates a network graph from the string 's',
-	 * which should be a path to a Cytoscape readable file, e.g. SIF
-	 * @param s the path of the file to be read.
-	 */
-	private void drawGraphFromSIF(String s)
-	{
-		// read the sif file and create the network
-		Cytoscape.createNetworkFromFile(s);
-		Cytoscape.getCurrentNetworkView().redrawGraph(false, true);
-
-	}
-
-	/**
-	 * This method loads the attribute NA files
-	 * @param s the path of the NA file to be loaded
-	 */
-	private void loadNodeAttributeFile(String s)
-	{
-		Cytoscape.loadAttributes(new String[] { s },
-				new String[] {});
-		Cytoscape.getCurrentNetworkView().updateView();
-		Cytoscape.firePropertyChange(Cytoscape.ATTRIBUTES_CHANGED, null, null);
-	}
-
-	/**
-	 * This method loads the attribute NA files
-	 * @param s the path of the NA file to be loaded
-	 */
-	private void loadNodeAttributeFileFromGraph(String s)
-	{
-		Cytoscape.loadAttributes(new String[] { s },
-				new String[] {  });
-		Cytoscape.getCurrentNetworkView().updateView();
-		Cytoscape.firePropertyChange(Cytoscape.ATTRIBUTES_CHANGED, null, null);
-
-		//TODO: big construction site here, to find out how to import network file from table
-		ImportAttributeTableTask task = new ImportAttributeTableTask(new DefaultAttributeTableReader(null, null,
-				0, null, true), s);
-		task.run();
-		//http://chianti.ucsd.edu/svn/cytoscape/trunk/coreplugins/TableImport/src/main/java/edu/ucsd/bioeng/coreplugin/tableImport/ui/ImportTextTableDialog.java
-//		AttributeMappingParameters mapping;
-//		mapping = new AttributeMappingParameters(objType, del,
-//				 listDelimiter, keyInFile,
-//				 mappingAttribute, aliasList,
-//				 attributeNames, attributeTypes,
-//				 listDataTypes, importFlag, caseSensitive);
-		Cytoscape.firePropertyChange(Cytoscape.NEW_ATTRS_LOADED, null, null);
-
-//		try {
-//			ImportTextTableDialog ittd = new ImportTextTableDialog(Cytoscape.getDesktop(), true, 1);
-//			ittd.pack();
-//			ittd.setLocationRelativeTo(Cytoscape.getDesktop());
-//			ittd.setVisible(true);
+//	/**
+//	 * This method creates a network graph from the string 's',
+//	 * which should be a path to a Cytoscape readable file, e.g. SIF
+//	 * @param s the path of the file to be read.
+//	 */
+//	private void drawGraphFromSIF(String s)
+//	{
+//		File file = new File(s);
+//		tm.execute(ldn.createTaskIterator(file));
+//		Cytoscape.getCurrentNetworkView().redrawGraph(false, true);
+//	}
 //
-//		} catch (JAXBException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
+//	/**
+//	 * This method loads the attribute NA files
+//	 * @param s the path of the NA file to be loaded
+//	 */
+//	private void loadNodeAttributeFile(String s)
+//	{
+//		Cytoscape.loadAttributes(new String[] { s },
+//				new String[] {});
+//		Cytoscape.getCurrentNetworkView().updateView();
+//		Cytoscape.firePropertyChange(Cytoscape.ATTRIBUTES_CHANGED, null, null);
+//	}
+//
+//	/**
+//	 * This method loads the attribute NA files
+//	 * @param s the path of the NA file to be loaded
+//	 */
+//	private void loadNodeAttributeFileFromGraph(String s)
+//	{
+//		Cytoscape.loadAttributes(new String[] { s },
+//				new String[] {  });
+//		Cytoscape.getCurrentNetworkView().updateView();
+//		Cytoscape.firePropertyChange(Cytoscape.ATTRIBUTES_CHANGED, null, null);
+//
+//		//TODO: big construction site here, to find out how to import network file from table
+//		ImportAttributeTableTask task = new ImportAttributeTableTask(new DefaultAttributeTableReader(null, null,
+//				0, null, true), s);
+//		task.run();
+//		//http://chianti.ucsd.edu/svn/cytoscape/trunk/coreplugins/TableImport/src/main/java/edu/ucsd/bioeng/coreplugin/tableImport/ui/ImportTextTableDialog.java
+////		AttributeMappingParameters mapping;
+////		mapping = new AttributeMappingParameters(objType, del,
+////				 listDelimiter, keyInFile,
+////				 mappingAttribute, aliasList,
+////				 attributeNames, attributeTypes,
+////				 listDataTypes, importFlag, caseSensitive);
+//		Cytoscape.firePropertyChange(Cytoscape.NEW_ATTRS_LOADED, null, null);
+//
+////		try {
+////			ImportTextTableDialog ittd = new ImportTextTableDialog(Cytoscape.getDesktop(), true, 1);
+////			ittd.pack();
+////			ittd.setLocationRelativeTo(Cytoscape.getDesktop());
+////			ittd.setVisible(true);
+////
+////		} catch (JAXBException e) {
+////			e.printStackTrace();
+////		} catch (IOException e) {
+////			e.printStackTrace();
+////		}
+//	}
+//
+//
+//	/**
+//	 * This method loads the vizmap property file and redraws the graph
+//	 * Also does the layout hierarchically and rotates the graph 180 degrees
+//	 * @param s the name of the vizmap property file
+//	 */
+//	private void mapVisually(String s)
+//	{
+//		//load the vizmap file
+//		Cytoscape.firePropertyChange(Cytoscape.VIZMAP_LOADED, null, s);
+//		VisualStyle vs = Cytoscape.getVisualMappingManager().getCalculatorCatalog().getVisualStyle("netView");
+//		Cytoscape.getCurrentNetworkView().setVisualStyle(vs.getName()); // not strictly necessary
+//
+//		// actually apply the visual style
+//		Cytoscape.getVisualMappingManager().setVisualStyle(vs);
+//		Cytoscape.getCurrentNetworkView().redrawGraph(true,true);
+//
+//		// TODO: should ask user whether he wants this? set the layout as hierarchical
+//		CyLayouts.getLayout("hierarchical").doLayout();
+//		if(Cytoscape.getCurrentNetwork().getNodeCount()<1000)
+//		{
+//			// TODO: sometimes rotating the graph causes some crash errors. thus only rotate if hierarchichal layout!
+//			//rotateGraph();
 //		}
-	}
-
-
-	/**
-	 * This method loads the vizmap property file and redraws the graph
-	 * Also does the layout hierarchically and rotates the graph 180 degrees
-	 * @param s the name of the vizmap property file
-	 */
-	private void mapVisually(String s)
-	{
-		//load the vizmap file
-		Cytoscape.firePropertyChange(Cytoscape.VIZMAP_LOADED, null, s);
-		VisualStyle vs = Cytoscape.getVisualMappingManager().getCalculatorCatalog().getVisualStyle("netView");
-		Cytoscape.getCurrentNetworkView().setVisualStyle(vs.getName()); // not strictly necessary
-
-		// actually apply the visual style
-		Cytoscape.getVisualMappingManager().setVisualStyle(vs);
-		Cytoscape.getCurrentNetworkView().redrawGraph(true,true);
-
-		// TODO: should ask user whether he wants this? set the layout as hierarchical
-		CyLayouts.getLayout("hierarchical").doLayout();
-		if(Cytoscape.getCurrentNetwork().getNodeCount()<1000)
-		{
-			// TODO: sometimes rotating the graph causes some crash errors. thus only rotate if hierarchichal layout!
-			//rotateGraph();
-		}
-	}
+//	}
 
 	/**
 	 * This method gets the filepath from the input file text area and then converts that xml file into SIF files
@@ -622,67 +640,6 @@ public class Controller extends JFrame implements ActionListener{
 		}
 	}
 
-	/**
-	 * this method browses for the first barcode file
-	 */
-	public void browseBarcode1File()
-	{
-		try
-		{
-			JFileChooser fc = new JFileChooser(".");
-			fc.setDialogTitle("Please choose Barcode file of Condition 1");
-
-			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
-			// get name und path
-			if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				barcode1File = fc.getSelectedFile();
-				// set the input barcode 1
-				setInputbarcode1(barcode1File.getAbsolutePath());
-				// put the absolute path in the textfield
-				affymetrixview.setInput1FieldText(inputbarcode1);
-			}
-		}
-		catch (Exception e)
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"Please select a Barcode file",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * this method browses for the second barcode file
-	 */
-	public void browseBarcode2File()
-	{
-		try
-		{
-			JFileChooser fc = new JFileChooser(".");
-			fc.setDialogTitle("Please choose Barcode file of Condition 2");
-
-			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
-			// get name und path
-			if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				barcode2File = fc.getSelectedFile();
-				// set the input barcode 2
-				setInputbarcode2(barcode2File.getAbsolutePath());
-				// put the absolute path in the textfield
-				affymetrixview.setInput2FieldText(inputbarcode2);
-			}
-		}
-		catch (Exception e)
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"Please select a Barcode file",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * This method opens a browsing window so the user can select a gene source file

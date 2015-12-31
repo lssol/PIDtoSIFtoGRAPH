@@ -1,16 +1,16 @@
-package irrcyn.internal.View;
+package irrcyn.View;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class AffymetrixView extends JFrame
+public class IlluminaView extends JFrame
 {
 	private JPanel mainpanel = new JPanel();
 	private JPanel titlepanel = new JPanel();
 	private JPanel toppanel = new JPanel();
 	private JLabel titlelabel = new JLabel();
-	private JLabel condition1label = new JLabel("Control");
-	private JLabel condition2label = new JLabel("Experiment");
+	private JLabel condition1label = new JLabel("Condition 1");
+	private JLabel condition2label = new JLabel("Condition 2");
 	private JTextField inputcondition1field = new JTextField(20);
 	private JTextField inputcondition2field = new JTextField(20);
 	private JButton browsecondition1button = new JButton("Browse");
@@ -18,16 +18,17 @@ public class AffymetrixView extends JFrame
 	private JButton applyfilterbutton = new JButton("Apply Filter");
 	private JButton helpbutton = new JButton("?");
 	
+	//TODO: this view has yet to be defined -> Ask carito!
 	/**
 	 * This constructor is responsible to build the frame of this class,
 	 * as well as setting the labels, text areas and the buttons,
 	 * as well as their actioncommands&listeners.
 	 * @param controller
 	 */
-	public AffymetrixView(Controller controller)
+	public IlluminaView(Controller controller)
 	{
 		// set the controller
-		controller = new Controller(this);
+		//controller = new Controller(this);
 		
 		// set the layouts for the different panels
 		mainpanel.setLayout(new GridBagLayout());
@@ -98,7 +99,7 @@ public class AffymetrixView extends JFrame
 		c.gridx = 3;
 		c.gridy = 2;
 		toppanel.add(helpbutton, c);
-		helpbutton.setActionCommand("BarcodeHelp");
+		helpbutton.setActionCommand("Help");
 		helpbutton.addActionListener(controller);
 		/* ------------------------------------------------------ */
 		// Add top title panel into the main panel
@@ -120,31 +121,5 @@ public class AffymetrixView extends JFrame
 		getContentPane().add(mainpanel);
 		getContentPane().setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 	    setDefaultCloseOperation(DISPOSE_ON_CLOSE);		
-	}
-	
-	public void setInput1FieldText(String arg)
-	{
-		this.inputcondition1field.setText(arg);
-	}
-
-	public void setInput2FieldText(String arg)
-	{
-		this.inputcondition2field.setText(arg);
-	}
-
-	public JTextField getInputcondition1field() {
-		return inputcondition1field;
-	}
-
-	public void setInputcondition1field(JTextField inputcondition1field) {
-		this.inputcondition1field = inputcondition1field;
-	}
-
-	public JTextField getInputcondition2field() {
-		return inputcondition2field;
-	}
-
-	public void setInputcondition2field(JTextField inputcondition2field) {
-		this.inputcondition2field = inputcondition2field;
 	}
 }

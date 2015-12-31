@@ -1,28 +1,37 @@
 package irrcyn.internal;
 
-import irrcyn.internal.View.Controller;
-import irrcyn.internal.View.MainFrame;
+import irrcyn.View.Controller;
+import irrcyn.View.MainFrame;
 import org.cytoscape.application.CyApplicationManager;
 import org.cytoscape.application.swing.CyAction;
 import org.cytoscape.service.util.AbstractCyActivator;
+import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
+import org.cytoscape.task.read.LoadTableFileTaskFactory;
+import org.cytoscape.work.TaskManager;
 import org.osgi.framework.BundleContext;
+
 
 import java.util.Properties;
 
 public class CyActivator extends AbstractCyActivator {
 	private Controller controller;
 	private MainFrame mainframe;
+
 	@Override
 	public void start(BundleContext bc) throws Exception {
-		
+		// To insert the app into the Apps menu
 		CyApplicationManager cyApplicationManager = getService(bc, CyApplicationManager.class);
-		
-		MenuAction action = new MenuAction(cyApplicationManager, "PIDtoSIFtoGRAPH");
-		
-		Properties properties = new Properties();
+		// To execute the tasks
+		TaskManager tm = getService(bc, TaskManager.class);
+		// To load the sif
+		LoadNetworkFileTaskFactory ldn = getService(bc, LoadNetworkFileTaskFactory.class) ;
+		// To load the NA attributes
+		LoadTableFileTaskFactory ldt = getService(bc, LoadTableFileTaskFactory.class) ;
 
+		
+		MenuAction action = new MenuAction(cyApplicationManager, "PIDtoSIFtoGRAPH", tm, ldn, ldt);
 //   Register it as a service:
-		registerService(bc,action,CyAction.class, new Properties());
+		registerAllServices(bc, action, new Properties());
 	}
 
 }

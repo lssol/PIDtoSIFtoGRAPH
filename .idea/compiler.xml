@@ -24,9 +24,17 @@
         <processorPath useClasspath="true" />
         <module name="PIDtoSIFtoGRAPH" />
       </profile>
+      <profile default="false" name="Annotation profile for try" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="try" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="PIDtoSIFtoGRAPH" target="1.6" />
+      <module name="try" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,7 +1,10 @@
-package irrcyn.internal.View;
+package irrcyn.View;
 
 import org.cytoscape.application.swing.CytoPanelComponent;
 import org.cytoscape.application.swing.CytoPanelName;
+import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
+import org.cytoscape.task.read.LoadTableFileTaskFactory;
+import org.cytoscape.work.TaskManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -60,7 +63,7 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 
 	
 	
-	public MainFrame(Controller controller) throws Exception{
+	public MainFrame(Controller controller, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt) throws Exception{
 		controller = new Controller(this);
 		expandcheckboxlabel.setFont(new Font("Ariel", Font.ITALIC, 8));
 		expandcheckboxlabel.setText("Check to expand");
