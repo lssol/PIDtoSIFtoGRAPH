@@ -28,6 +28,10 @@ import de.bioquant.cytoscape.pidfileconverter.FileWriter.SifFileWriter;
 import de.bioquant.cytoscape.pidfileconverter.FileWriter.UniprotIdForUniprotWithModWriter;
 import de.bioquant.cytoscape.pidfileconverter.FileWriter.MemberExpansion.SifFileExpandMolWriter;
 import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
+import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
+import org.cytoscape.task.read.LoadTableFileTaskFactory;
+import org.cytoscape.work.TaskManager;
+
 /**
 
 
@@ -64,7 +68,11 @@ public class Controller extends JFrame implements ActionListener{
 	private File genetargetFile = null;
 	private File sigmolsourceFile = null;
 	private File sigmoltargetFile = null;
-	
+	private TaskManager tm;
+	private LoadNetworkFileTaskFactory ldn;
+	private LoadTableFileTaskFactory ldt;
+
+
 	// the file name of the VIZMAP property file
 	private static final String VIZMAP_PROPS_FILE_NAME = "netView.props";
 	// the file concatenation of the (filtered_absent_proteins)
@@ -73,10 +81,16 @@ public class Controller extends JFrame implements ActionListener{
 	/**
 	 * The constructor for the mainframe controller
 	 * @param mainframe
+	 * @param tm
+	 * @param ldn
+	 * @param ldt
 	 */
-	public Controller(MainFrame mainframe)
+	public Controller(MainFrame mainframe, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt)
 	{
 		this.mainframe = mainframe;
+		this.tm = tm;
+		this.ldn=ldn;
+		this.ldt=ldt;
 	}
 
 	/**
@@ -85,7 +99,7 @@ public class Controller extends JFrame implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-	/*	String command = e.getActionCommand();
+		String command = e.getActionCommand();
 
 		// if user clicks browse button
 		if (command.equals("Browse")) {
@@ -169,7 +183,7 @@ public class Controller extends JFrame implements ActionListener{
 					// change the title of the splash frame
 					sp.setTitle("Network loaded, now loading visualisation...");
 					// load the VIZMAP props file
-					mapVisually(VIZMAP_PROPS_FILE_NAME);
+					//mapVisually(VIZMAP_PROPS_FILE_NAME);
 
 					// change the title of the splash frame
 					sp.setTitle("Visualisation loaded, this window closes automatically.");
@@ -194,76 +208,36 @@ public class Controller extends JFrame implements ActionListener{
 				}
 			}
 
-		}*/
+		}
 	}
 
-//	/**
-//	 * This method creates a network graph from the string 's',
-//	 * which should be a path to a Cytoscape readable file, e.g. SIF
-//	 * @param s the path of the file to be read.
-//	 */
-//	private void drawGraphFromSIF(String s)
-//	{
-//		File file = new File(s);
-//		tm.execute(ldn.createTaskIterator(file));
-//		Cytoscape.getCurrentNetworkView().redrawGraph(false, true);
-//	}
-//
-//	/**
-//	 * This method loads the attribute NA files
-//	 * @param s the path of the NA file to be loaded
-//	 */
-//	private void loadNodeAttributeFile(String s)
-//	{
-//		Cytoscape.loadAttributes(new String[] { s },
-//				new String[] {});
-//		Cytoscape.getCurrentNetworkView().updateView();
-//		Cytoscape.firePropertyChange(Cytoscape.ATTRIBUTES_CHANGED, null, null);
-//	}
-//
-//	/**
-//	 * This method loads the attribute NA files
-//	 * @param s the path of the NA file to be loaded
-//	 */
-//	private void loadNodeAttributeFileFromGraph(String s)
-//	{
-//		Cytoscape.loadAttributes(new String[] { s },
-//				new String[] {  });
-//		Cytoscape.getCurrentNetworkView().updateView();
-//		Cytoscape.firePropertyChange(Cytoscape.ATTRIBUTES_CHANGED, null, null);
-//
-//		//TODO: big construction site here, to find out how to import network file from table
-//		ImportAttributeTableTask task = new ImportAttributeTableTask(new DefaultAttributeTableReader(null, null,
-//				0, null, true), s);
-//		task.run();
-//		//http://chianti.ucsd.edu/svn/cytoscape/trunk/coreplugins/TableImport/src/main/java/edu/ucsd/bioeng/coreplugin/tableImport/ui/ImportTextTableDialog.java
-////		AttributeMappingParameters mapping;
-////		mapping = new AttributeMappingParameters(objType, del,
-////				 listDelimiter, keyInFile,
-////				 mappingAttribute, aliasList,
-////				 attributeNames, attributeTypes,
-////				 listDataTypes, importFlag, caseSensitive);
-//		Cytoscape.firePropertyChange(Cytoscape.NEW_ATTRS_LOADED, null, null);
-//
-////		try {
-////			ImportTextTableDialog ittd = new ImportTextTableDialog(Cytoscape.getDesktop(), true, 1);
-////			ittd.pack();
-////			ittd.setLocationRelativeTo(Cytoscape.getDesktop());
-////			ittd.setVisible(true);
-////
-////		} catch (JAXBException e) {
-////			e.printStackTrace();
-////		} catch (IOException e) {
-////			e.printStackTrace();
-////		}
-//	}
-//
-//
-//	/**
-//	 * This method loads the vizmap property file and redraws the graph
-//	 * Also does the layout hierarchically and rotates the graph 180 degrees
-//	 * @param s the name of the vizmap property file
-//	 */
+	/**
+	 * This method creates a network graph from the string 's',
+	 * which should be a path to a Cytoscape readable file, e.g. SIF
+	 * @param s the path of the file to be read.
+	 */
+	private void drawGraphFromSIF(String s)
+	{
+		File file = new File(s);
+		tm.execute(ldn.createTaskIterator(file));
+	}
+
+	/**
+	 * This method loads the attribute NA files
+	 * @param s the path of the NA file to be loaded
+	 */
+	private void loadNodeAttributeFile(String s)
+	{
+		File file = new File(s);
+		tm.execute(ldt.createTaskIterator(file));
+	}
+
+
+	/**
+	 * This method loads the vizmap property file and redraws the graph
+	 * Also does the layout hierarchically and rotates the graph 180 degrees
+	 * @param s the name of the vizmap property file
+	 */
 //	private void mapVisually(String s)
 //	{
 //		//load the vizmap file

@@ -64,7 +64,7 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 	
 	
 	public MainFrame(Controller controller, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt) throws Exception{
-		controller = new Controller(this);
+		controller = new Controller(this, tm, ldn, ldt);
 		expandcheckboxlabel.setFont(new Font("Ariel", Font.ITALIC, 8));
 		expandcheckboxlabel.setText("Check to expand");
 		mainpanel.setLayout(new GridBagLayout());

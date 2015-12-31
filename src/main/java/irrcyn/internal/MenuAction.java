@@ -27,9 +27,9 @@ public class MenuAction extends AbstractCyAction {
 	public MenuAction(CyApplicationManager cyApplicationManager, final String menuTitle , TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt) {
 		super(menuTitle, cyApplicationManager, null, null);
 		setPreferredMenu("Apps");
-		tm = tm;
-		ldn=ldn;
-		ldt=ldt;
+		this.tm = tm;
+		this.ldn=ldn;
+		this.ldt=ldt;
 	}
 
 	public void actionPerformed(ActionEvent e) {
