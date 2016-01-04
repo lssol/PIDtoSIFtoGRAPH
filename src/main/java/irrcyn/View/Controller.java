@@ -31,6 +31,7 @@ import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
 import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
 import org.cytoscape.task.read.LoadTableFileTaskFactory;
 import org.cytoscape.work.TaskManager;
+import org.cytoscape.work.TaskObserver;
 
 /**
 
