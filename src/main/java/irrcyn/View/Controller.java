@@ -3,6 +3,8 @@ package irrcyn.View;
 
 
 import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
+import irrcyn.internal.parser.ParserTask;
+
 import org.cytoscape.application.swing.CytoPanelComponent;
 import org.cytoscape.model.CyNetwork;
 
@@ -30,8 +32,10 @@ import de.bioquant.cytoscape.pidfileconverter.FileWriter.MemberExpansion.SifFile
 import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
 import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
 import org.cytoscape.task.read.LoadTableFileTaskFactory;
+import org.cytoscape.work.TaskIterator;
 import org.cytoscape.work.TaskManager;
 import org.cytoscape.work.TaskObserver;
+import org.omg.CORBA.OBJ_ADAPTER;
 
 /**
 
@@ -165,23 +169,33 @@ public class Controller extends JFrame implements ActionListener{
 					drawGraphFromSIF(getTargetSIFpath());
 					//set focus on this frame again
 					sp.requestFocus();
-					// load the NODE_TYPE .NA file
-					loadNodeAttributeFile(getTargetNODE_TYPEpath());
-					// load the UNIPROT .NA file
-					loadNodeAttributeFile(getTargetUNIPROTpath());
-					// load the MODIFICATIONS .NA file
-					loadNodeAttributeFile(getTargetMODIFICATIONSpath());
-					// load the PREFERRED_SYMBOL .NA file
-					loadNodeAttributeFile(getTargetPREFERRED_SYMBOLpath());
-					// load the PREFERRED_SYMBOL_EXT .NA file
-					loadNodeAttributeFile(getTargetPREFERRED_SYMBOL_EXTpath());
+
+					ParserTask parserTask = new ParserTask(getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
+							getTargetPREFERRED_SYMBOLpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetID_PREFpath());
+
+					parserTask.run();
+
+					loadNodeAttributeFile(parserTask.getTargetCSV());
+
+
+//					// load the UNIPROT .NA file
+//					loadNodeAttributeFile(getTargetUNIPROTpath());
+//					// load the MODIFICATIONS .NA file
+//					loadNodeAttributeFile(getTargetMODIFICATIONSpath());
+//					// load the PREFERRED_SYMBOL .NA file
+//					loadNodeAttributeFile(getTargetPREFERRED_SYMBOLpath());
 //					// load the PREFERRED_SYMBOL_EXT .NA file
-//					loadNodeAttributeFileFromGraph(getTargetPREFERRED_SYMBOL_EXTpath());
-					// load the PID .NA filecreateNetworkTaskFactory
-					loadNodeAttributeFile(getTargetPIDpath());
-					// load the ID_PREF .NA file
-					loadNodeAttributeFile(getTargetID_PREFpath());
+//					loadNodeAttributeFile(getTargetPREFERRED_SYMBOL_EXTpath());
+////					// load the PREFERRED_SYMBOL_EXT .NA file
+////					loadNodeAttributeFileFromGraph(getTargetPREFERRED_SYMBOL_EXTpath());
+//					// load the PID .NA filecreateNetworkTaskFactory
+//					loadNodeAttributeFile(getTargetPIDpath());
+//					// load the ID_PREF .NA file
+//					loadNodeAttributeFile(getTargetID_PREFpath());
 					// change the title of the splash frame
+
+
+
 					sp.setTitle("Network loaded, now loading visualisation...");
 					// load the VIZMAP props file
 					//mapVisually(VIZMAP_PROPS_FILE_NAME);
@@ -199,7 +213,7 @@ public class Controller extends JFrame implements ActionListener{
 				} catch (Exception exp) {
 					JOptionPane
 							.showMessageDialog(new JFrame(),
-									"The graph cannot be read!",
+									"The graph cannot be read! : " + exp.toString(),
 									"Warning", JOptionPane.WARNING_MESSAGE);
 					exp.printStackTrace();
 				} finally {
@@ -314,6 +328,7 @@ public class Controller extends JFrame implements ActionListener{
 			setTargetUniProtToGeneIDMapFilepath(temporarypath[0].concat(".UPToGeneIDMap.NA"));
 			// set the GeneID to Affymetrix map file path
 			setTargetGeneIDtoAffymetrixMapFilepath(temporarypath[0].concat(".GeneIDToAffyMap.NA"));
+
 		}
 		this.inputfilepath = filepath;
 		if(inputfilepath.endsWith("xml"))

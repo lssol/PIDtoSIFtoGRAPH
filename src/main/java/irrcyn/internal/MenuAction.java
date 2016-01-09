@@ -8,6 +8,7 @@ import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
 import org.cytoscape.task.read.LoadTableFileTaskFactory;
 import org.cytoscape.work.TaskFactory;
 import org.cytoscape.work.TaskManager;
+import org.omg.CORBA.OBJ_ADAPTER;
 
 import java.awt.event.ActionEvent;
 
