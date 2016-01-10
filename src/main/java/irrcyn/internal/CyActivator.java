@@ -23,7 +23,7 @@ public class CyActivator extends AbstractCyActivator {
 		// To insert the app into the Apps menu
 		CyApplicationManager cyApplicationManager = getService(bc, CyApplicationManager.class);
 		// To execute the tasks
-		TaskManager tm = getService(bc, TaskManager.class);
+		TaskManager tm = getService(bc, SynchronousTaskManager.class);
 		// To load the sif
 		LoadNetworkFileTaskFactory ldn = getService(bc, LoadNetworkFileTaskFactory.class) ;
 		// To load the NA attributes

@@ -1,5 +1,8 @@
 package irrcyn.internal.parser;
 
+import org.cytoscape.work.AbstractTask;
+import org.cytoscape.work.TaskMonitor;
+
 import java.io.*;
 import java.util.List;
 
@@ -7,12 +10,12 @@ import java.util.List;
 /**
  * Created by seti on 09/01/16.
  */
-public class ParserTask{
+public class ParserTask extends AbstractTask{
     /**
      * List of the files we need to convert
      */
     private String[] aParser;
-
+    File f;
 
     private Nodes nodes;
     private String infoLabel;
@@ -22,14 +25,17 @@ public class ParserTask{
     String line = "";
     String split = "=";
 
-    String targetCSV = "nodeInfo.csv";
+    String targetCSV;
 
-    public ParserTask(String... aParser) {
+    public ParserTask(String dir, String... aParser) throws IOException {
         nodes = new Nodes();
         this.aParser = aParser;
+        this.targetCSV = dir;
+        f = new File (targetCSV);
+        f.createNewFile();
     }
 
-    public void run() throws Exception {
+    public void run(TaskMonitor taskMonitor) throws Exception {
         Node currentNode;
         int index = 0;
 
@@ -55,8 +61,6 @@ public class ParserTask{
                 if (br != null) {
                     try {
                         br.close();
-                        System.out.println(Node.nbNodes);
-                        System.out.println(nodes.size());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -65,8 +69,6 @@ public class ParserTask{
         }
 
         // Ecriture
-        File f = new File (targetCSV);
-
         try
         {
             PrintWriter pw = new PrintWriter (new BufferedWriter (new FileWriter (f)));
@@ -105,6 +107,8 @@ public class ParserTask{
 
     }
     public String getTargetCSV(){
-        return targetCSV;
+        File f = new File (targetCSV);
+        //return targetCSV;
+        return f.getAbsolutePath();
     }
 }

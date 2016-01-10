@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Iterator;
 
 import de.bioquant.cytoscape.pidfileconverter.Exceptions.FileParsingException;
 import de.bioquant.cytoscape.pidfileconverter.Exceptions.NoValidManagerSetException;
@@ -55,6 +56,7 @@ public class Controller extends JFrame implements ActionListener{
 	private static String inputbarcode1;
 	private static String inputbarcode2;
 	private static String targetSIFpath;
+	private static String targetCSVpath;
 	private static String targetNODE_TYPEpath;
 	private static String targetUNIPROTpath;
 	private static String targetMODIFICATIONSpath;
@@ -136,6 +138,7 @@ public class Controller extends JFrame implements ActionListener{
 					// targetSIFpath is set here by default
 					String[] temporarypath = curFile.getAbsolutePath().split(".xml");
 					setTargetSIFpath(temporarypath[0].concat(".sif"));
+					setTargetCSVpath(temporarypath[0].concat(".csv"));
 				}
 				if (curFile.getAbsolutePath().endsWith("sif")) {
 					// targetSIFpath is set here by default
@@ -163,53 +166,47 @@ public class Controller extends JFrame implements ActionListener{
 					exp.printStackTrace();
 				}
 				try {
-					//set focus on this frame
-					sp.requestFocus();
-					// draw the network graph of the SIF file
-					drawGraphFromSIF(getTargetSIFpath());
-					//set focus on this frame again
-					sp.requestFocus();
+//					//set focus on this frame
+//					sp.requestFocus();
+//					// draw the network graph of the SIF file
+//					drawGraphFromSIF(getTargetSIFpath());
+//					//set focus on this frame again
+//					sp.requestFocus();
 
-					ParserTask parserTask = new ParserTask(getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
+
+					ParserTask parserTask = new ParserTask(getTargetCSVpath(),getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
 							getTargetPREFERRED_SYMBOLpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetID_PREFpath());
 
-					parserTask.run();
 
-					loadNodeAttributeFile(parserTask.getTargetCSV());
-
-
-//					// load the UNIPROT .NA file
-//					loadNodeAttributeFile(getTargetUNIPROTpath());
-//					// load the MODIFICATIONS .NA file
-//					loadNodeAttributeFile(getTargetMODIFICATIONSpath());
-//					// load the PREFERRED_SYMBOL .NA file
-//					loadNodeAttributeFile(getTargetPREFERRED_SYMBOLpath());
-//					// load the PREFERRED_SYMBOL_EXT .NA file
-//					loadNodeAttributeFile(getTargetPREFERRED_SYMBOL_EXTpath());
-////					// load the PREFERRED_SYMBOL_EXT .NA file
-////					loadNodeAttributeFileFromGraph(getTargetPREFERRED_SYMBOL_EXTpath());
-//					// load the PID .NA filecreateNetworkTaskFactory
-//					loadNodeAttributeFile(getTargetPIDpath());
-//					// load the ID_PREF .NA file
-//					loadNodeAttributeFile(getTargetID_PREFpath());
-					// change the title of the splash frame
-
-
-
-					sp.setTitle("Network loaded, now loading visualisation...");
-					// load the VIZMAP props file
-					//mapVisually(VIZMAP_PROPS_FILE_NAME);
-
-					// change the title of the splash frame
-					sp.setTitle("Visualisation loaded, this window closes automatically.");
-
-					// displaying a successful conversion message
-					String filepath = getTargetSIFpath();
+					File SIFFile = new File(getTargetSIFpath());
 					JOptionPane
 							.showMessageDialog(new JFrame(),
-									"Conversion successful! Files converted are located in the directory:"
-											+ "\n" + filepath,
-									"Success", JOptionPane.INFORMATION_MESSAGE);
+									parserTask.getTargetCSV(),
+									"Warning", JOptionPane.WARNING_MESSAGE);
+					File CSVFile = new File(parserTask.getTargetCSV());
+
+					TaskIterator itr = ldn.createTaskIterator(SIFFile);
+					itr.append(parserTask);
+					itr.append(ldt.createTaskIterator(CSVFile));
+
+					tm.execute(itr);
+//					loadNodeAttributeFile(parserTask.getTargetCSV());
+
+//
+//					sp.setTitle("Network loaded, now loading visualisation...");
+//					// load the VIZMAP props file
+//					//mapVisually(VIZMAP_PROPS_FILE_NAME);
+//
+//					// change the title of the splash frame
+//					sp.setTitle("Visualisation loaded, this window closes automatically.");
+//
+//					// displaying a successful conversion message
+//					String filepath = getTargetSIFpath();
+//					JOptionPane
+//							.showMessageDialog(new JFrame(),
+//									"Conversion successful! Files converted are located in the directory:"
+//											+ "\n" + filepath,
+//									"Success", JOptionPane.INFORMATION_MESSAGE);
 				} catch (Exception exp) {
 					JOptionPane
 							.showMessageDialog(new JFrame(),
@@ -290,6 +287,7 @@ public class Controller extends JFrame implements ActionListener{
 				// set the SIF file path
 				temporarypath = curFile.getAbsolutePath().split(".xml");
 				setTargetSIFpath(temporarypath[0].concat(".sif"));
+				setTargetCSVpath(temporarypath[0].concat(".csv"));
 			}
 			if(curFile.getAbsolutePath().endsWith("sif"))
 			{
@@ -893,5 +891,13 @@ public class Controller extends JFrame implements ActionListener{
 
 	public static String getSubgraphed() {
 		return SUBGRAPHED;
+	}
+
+	public void setTargetCSVpath(String targetCSVpath) {
+		this.targetCSVpath = targetCSVpath;
+	}
+
+	public String getTargetCSVpath() {
+		return targetCSVpath;
 	}
 }
