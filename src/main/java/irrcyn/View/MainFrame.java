@@ -159,6 +159,7 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		c.gridy = 1;
 		toppanel.add(outputbutton, c);
 		outputbutton.setActionCommand("Output");
+		outputbutton.setEnabled(false);
 		outputbutton.addActionListener(controller);
 		/* ------------------------------------------------------ */
 		// Set the middle
@@ -459,7 +460,15 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		mainpanel.add(bottompanel, c);
 	    /* ------------------------------------------------------ */
 		
-		
+		// Because the application is not yet completely ported
+
+		// Output doesnt work
+		expandcheckbox.setEnabled(false);
+		outputtextfield.setEnabled(false);
+		outputbutton.setEnabled(false);
+		outputfilenamelabel.setEnabled(false);
+		checktoexpandhelpbutton.setEnabled(false);
+
 		// add the main panel to the content pane
 		getContentPane().add(mainpanel);
 		getContentPane().setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);

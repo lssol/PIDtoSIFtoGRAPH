@@ -145,16 +145,16 @@ public class Controller extends JFrame implements ActionListener{
 					setTargetSIFpath(curFile.getAbsolutePath());
 				}
 
-				// create the splashframe
-				SplashFrame sp = new SplashFrame();
-				sp.setTitle("Please Wait a Moment...");
-				sp.setLocation(100, 100);
-				sp.setSize(500, 100);
-				sp.setResizable(false);
-				sp.setVisible(true);
+//				// create the splashframe
+//				SplashFrame sp = new SplashFrame();
+//				sp.setTitle("Please Wait a Moment...");
+//				sp.setLocation(100, 100);
+//				sp.setSize(500, 100);
+//				sp.setResizable(false);
+//				sp.setVisible(true);
 				try {
 					//setfocus on this frame
-					sp.requestFocus();
+					///sp.requestFocus();
 					// converting a file which is displayed in the inputtextfield JTextfield field in mainframe
 					convertFile(filetobeconverted);
 					isConverted = true;
@@ -166,23 +166,11 @@ public class Controller extends JFrame implements ActionListener{
 					exp.printStackTrace();
 				}
 				try {
-//					//set focus on this frame
-//					sp.requestFocus();
-//					// draw the network graph of the SIF file
-//					drawGraphFromSIF(getTargetSIFpath());
-//					//set focus on this frame again
-//					sp.requestFocus();
-
-
-					ParserTask parserTask = new ParserTask(getTargetCSVpath(),getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
+					ParserTask parserTask = new ParserTask(getTargetCSVpath(),getTargetPIDpath(), getTargetNODE_TYPEpath(), getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
 							getTargetPREFERRED_SYMBOLpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetID_PREFpath());
 
 
 					File SIFFile = new File(getTargetSIFpath());
-					JOptionPane
-							.showMessageDialog(new JFrame(),
-									parserTask.getTargetCSV(),
-									"Warning", JOptionPane.WARNING_MESSAGE);
 					File CSVFile = new File(parserTask.getTargetCSV());
 
 					TaskIterator itr = ldn.createTaskIterator(SIFFile);
@@ -212,11 +200,8 @@ public class Controller extends JFrame implements ActionListener{
 							.showMessageDialog(new JFrame(),
 									"The graph cannot be read! : " + exp.toString(),
 									"Warning", JOptionPane.WARNING_MESSAGE);
-					exp.printStackTrace();
 				} finally {
 					mainframe.requestFocus();
-					// delete the SplashFrame
-					sp.dispose();
 				}
 			}
 

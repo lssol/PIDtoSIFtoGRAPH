@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a6ca26-cbd8-4c0d-96a4-5acff43802d7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/.~lock.pid.csv#" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/pid.ID_PREF.NA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/pid.MODIFICATIONS.NA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/pid.NODE_TYPE.NA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/pid.PREFERRED_SYMBOL.NA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/pid.PREFERRED_SYMBOL_EXT.NA" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/pid.UNIPROT.NA" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/PIDtoSIFtoGRAPH-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/PIDtoSIFtoGRAPH-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/irrcyn/View/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/irrcyn/View/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java" afterPath="$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java" afterPath="$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTask.java" afterPath="$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/pid.sif" afterPath="$PROJECT_DIR$/tests/pid.sif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/pid.csv" afterPath="$PROJECT_DIR$/tests/pid.csv" />
     </list>
     <ignored path="PIDtoSIFtoGRAPH.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,14 +40,14 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/View/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.964286">
-              <caret line="176" column="23" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
+            <state vertical-scroll-proportion="-21.892857">
+              <caret line="184" column="49" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#28612#28613#0" expanded="true" />
-                <element signature="e#28653#28654#0" expanded="true" />
-                <element signature="e#28690#28691#0" expanded="true" />
-                <element signature="e#28717#28718#0" expanded="true" />
+                <element signature="e#28234#28235#0" expanded="true" />
+                <element signature="e#28275#28276#0" expanded="true" />
+                <element signature="e#28312#28313#0" expanded="true" />
+                <element signature="e#28339#28340#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParserTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ParserTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.07845188">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -96,11 +103,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CyActivator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CyActivator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.37656903">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.0">
+              <caret line="506" column="5" selection-start-line="506" selection-start-column="5" selection-end-line="506" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -183,14 +202,14 @@
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/View/IlluminaView.java" />
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/View/SplashFrame.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTaskFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/MenuAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/Nodes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/irrcyn/View/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/irrcyn/View/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java" />
       </list>
     </option>
   </component>
@@ -751,7 +770,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -798,7 +819,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="108" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="108" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -838,7 +861,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="108" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="108" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1019,70 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#17994#17995#0" expanded="false" />
-            <element signature="e#18035#18036#0" expanded="false" />
-            <element signature="e#18078#18079#0" expanded="false" />
-            <element signature="e#18123#18124#0" expanded="false" />
-            <element signature="e#18163#18164#0" expanded="false" />
-            <element signature="e#18206#18207#0" expanded="false" />
-            <element signature="e#18254#18255#0" expanded="false" />
-            <element signature="e#18305#18306#0" expanded="false" />
-            <element signature="e#18348#18349#0" expanded="false" />
-            <element signature="e#18391#18392#0" expanded="false" />
-            <element signature="e#18436#18437#0" expanded="false" />
-            <element signature="e#18480#18481#0" expanded="false" />
-            <element signature="e#18531#18532#0" expanded="false" />
-            <element signature="e#18569#18570#0" expanded="false" />
-            <element signature="e#18626#18627#0" expanded="false" />
-            <element signature="e#18663#18664#0" expanded="false" />
-            <element signature="e#18706#18707#0" expanded="false" />
-            <element signature="e#18742#18743#0" expanded="false" />
-            <element signature="e#18784#18785#0" expanded="false" />
-            <element signature="e#18822#18823#0" expanded="false" />
-            <element signature="e#18873#18874#0" expanded="false" />
-            <element signature="e#18912#18913#0" expanded="false" />
-            <element signature="e#18951#18952#0" expanded="false" />
-            <element signature="e#18979#18980#0" expanded="false" />
-            <element signature="e#19031#19032#0" expanded="false" />
-            <element signature="e#19076#19077#0" expanded="false" />
-            <element signature="e#19124#19125#0" expanded="false" />
-            <element signature="e#19158#19159#0" expanded="false" />
-            <element signature="e#19351#19352#0" expanded="false" />
-            <element signature="e#19385#19386#0" expanded="false" />
-            <element signature="e#19443#19444#0" expanded="false" />
-            <element signature="e#19488#19489#0" expanded="false" />
-            <element signature="e#19536#19537#0" expanded="false" />
-            <element signature="e#19569#19570#0" expanded="false" />
-            <element signature="e#19625#19626#0" expanded="false" />
-            <element signature="e#19669#19670#0" expanded="false" />
-            <element signature="e#19717#19718#0" expanded="false" />
-            <element signature="e#19750#19751#0" expanded="false" />
-            <element signature="e#19806#19807#0" expanded="false" />
-            <element signature="e#19850#19851#0" expanded="false" />
-            <element signature="e#19900#19901#0" expanded="false" />
-            <element signature="e#19935#19936#0" expanded="false" />
-            <element signature="e#19993#19994#0" expanded="false" />
-            <element signature="e#20039#20040#0" expanded="false" />
-            <element signature="e#20089#20090#0" expanded="false" />
-            <element signature="e#20124#20125#0" expanded="false" />
-            <element signature="e#20182#20183#0" expanded="false" />
-            <element signature="e#20228#20229#0" expanded="false" />
-            <element signature="e#20275#20276#0" expanded="false" />
-            <element signature="e#20293#20294#0" expanded="false" />
-            <element signature="e#20348#20349#0" expanded="false" />
-            <element signature="e#20380#20381#0" expanded="false" />
-            <element signature="e#20417#20418#0" expanded="false" />
-            <element signature="e#20435#20436#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/bioquant/cytoscape/pidfileconverter/Exceptions/InvalidUniProtId.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1165,33 +1126,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/View/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.964286">
-          <caret line="176" column="23" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
+        <state vertical-scroll-proportion="-21.892857">
+          <caret line="184" column="49" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#28612#28613#0" expanded="true" />
-            <element signature="e#28653#28654#0" expanded="true" />
-            <element signature="e#28690#28691#0" expanded="true" />
-            <element signature="e#28717#28718#0" expanded="true" />
+            <element signature="e#28234#28235#0" expanded="true" />
+            <element signature="e#28275#28276#0" expanded="true" />
+            <element signature="e#28312#28313#0" expanded="true" />
+            <element signature="e#28339#28340#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/internal/parser/ParserTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/View/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.07845188">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="506" column="5" selection-start-line="506" selection-start-column="5" selection-end-line="506" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/irrcyn/internal/CyActivator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37656903">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

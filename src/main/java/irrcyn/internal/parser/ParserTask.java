@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by seti on 09/01/16.
  */
-public class ParserTask extends AbstractTask{
+public class ParserTask extends AbstractTask {
     /**
      * List of the files we need to convert
      */
@@ -31,7 +31,7 @@ public class ParserTask extends AbstractTask{
         nodes = new Nodes();
         this.aParser = aParser;
         this.targetCSV = dir;
-        f = new File (targetCSV);
+        f = new File(targetCSV);
         f.createNewFile();
     }
 
@@ -40,7 +40,7 @@ public class ParserTask extends AbstractTask{
         int index = 0;
 
         // Lecture
-        for (String directory:aParser){
+        for (String directory : aParser) {
             try {
                 br = new BufferedReader(new FileReader(directory));
 
@@ -49,7 +49,7 @@ public class ParserTask extends AbstractTask{
 
                 while ((line = br.readLine()) != null) {
                     currentNode = nodes.tryToAdd(line.split(split)[0].trim()); // On ajoute le noeud ou on le récupère
-                    currentNode.addAttribute(infoLabel,line.split(split)[1].trim()); // On ajoute l'attribut au noeud
+                    currentNode.addAttribute(infoLabel, line.split(split)[1].trim()); // On ajoute l'attribut au noeud
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -69,14 +69,13 @@ public class ParserTask extends AbstractTask{
         }
 
         // Ecriture
-        try
-        {
-            PrintWriter pw = new PrintWriter (new BufferedWriter (new FileWriter (f)));
+        try {
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(f)));
 
             // 1st line
             pw.print("name");
             List<String> attributes = nodes.getAttributes();
-            for(String attribute:attributes){
+            for (String attribute : attributes) {
                 pw.print("," + attribute);
             }
 
@@ -84,14 +83,12 @@ public class ParserTask extends AbstractTask{
 
 
             // The next lines
-            for (Node node:nodes)
-            {
-                pw.print (node.getName());
-                for(String attribute:attributes){
-                    if(node.getAttributes().containsKey(attribute)){
+            for (Node node : nodes) {
+                pw.print(node.getName());
+                for (String attribute : attributes) {
+                    if (node.getAttributes().containsKey(attribute)) {
                         pw.print("," + node.getAttributes().get(attribute));
-                    }
-                    else{
+                    } else {
                         pw.print("");
                     }
                 }
@@ -99,15 +96,20 @@ public class ParserTask extends AbstractTask{
             }
 
             pw.close();
-        }
-        catch (IOException exception)
-        {
-            System.err.println ("Erreur lors de l'ecriture du CSV : " + exception.toString());
+
+            File s;
+            for(String path:aParser){
+                s = new File(path);
+                s.delete();
+            }
+        } catch (IOException exception) {
+            System.err.println("Erreur lors de l'ecriture du CSV : " + exception.toString());
         }
 
     }
-    public String getTargetCSV(){
-        File f = new File (targetCSV);
+
+    public String getTargetCSV() {
+        File f = new File(targetCSV);
         //return targetCSV;
         return f.getAbsolutePath();
     }
