@@ -1,266 +1,266 @@
-name,Uniprot_ID,MODIFICATIONS,ID_PREFERRED_SYMBOL,NODE_TYPE,PREFERRED_SYMBOL_EXT,PREFERRED_SYMBOL
-pid_i_204337,pid_i_204337,modification,,
-pid_i_204336,pid_i_204336,modification,,
-cell_migration,cell_migration,biological_process,cell_migration,cell_migration
-pid_i_204338,pid_i_204338,modification,,
-pid_i_204290,pid_i_204290,modification,,
-pid_i_204300,pid_i_204300,modification,,
-pid_i_204340,pid_i_204340,pathway,,
-pid_i_204341,pid_i_204341,pathway,,
-pid_i_204301,pid_i_204301,modification,,
-pid_i_204302,pid_i_204302,modification,,
-pid_i_204294,pid_i_204294,modification,,
-pid_i_204293,pid_i_204293,modification,,
-pid_i_204292,pid_i_204292,modification,,
-pid_i_204291,pid_i_204291,modification,,
-pid_i_204298,pid_i_204298,modification,,
-pid_i_204297,pid_i_204297,modification,,
-pid_i_204296,pid_i_204296,translocation,,
-pid_i_204295,pid_i_204295,translocation,,
-pid_i_204299,pid_i_204299,modification,,
-pid_i_204328,pid_i_204328,subnet,,
-pid_i_204325,pid_i_204325,modification,,
-pid_i_204329,pid_i_204329,subnet,,
-pid_i_204330,pid_i_204330,subnet,,
-pid_i_204331,pid_i_204331,subnet,,
-pid_i_204334,pid_i_204334,subnet,,
-pid_i_204335,pid_i_204335,subnet,,
-pid_i_204332,pid_i_204332,subnet,,
-pid_i_204333,pid_i_204333,subnet,,
-pid_i_204319,pid_i_204319,modification,,
-pid_i_204318,pid_i_204318,modification,,
-pid_i_204315,pid_i_204315,modification,,
-pid_i_204314,pid_i_204314,modification,,
-pid_i_204317,pid_i_204317,modification,,
-pid_i_204316,pid_i_204316,modification,,
-pid_i_204322,pid_i_204322,modification,,
-pid_i_204323,pid_i_204323,subnet,,
-pid_i_204324,pid_i_204324,subnet,,
-pid_i_204320,pid_i_204320,modification,,
-pid_i_204279,pid_i_204279,modification,,
-pid_i_204278,pid_i_204278,modification,,
-pid_i_204277,pid_i_204277,modification,,
-pid_i_204276,pid_i_204276,modification,,
-pid_i_204275,pid_i_204275,modification,,
-pid_i_204309,pid_i_204309,modification,,
-cortical_actin_cytoskeleton_organization,cortical_actin_cytoskeleton_organization,biological_process,cortical_actin_cytoskeleton_organization,cortical_actin_cytoskeleton_organization
-pid_i_204307,pid_i_204307,modification,,
-pid_i_204304,pid_i_204304,modification,,
-pid_i_204303,pid_i_204303,modification,,
-pid_i_204312,pid_i_204312,modification,,
-pid_i_204281,pid_i_204281,modification,,
-pid_i_204313,pid_i_204313,modification,,
-pid_i_204280,pid_i_204280,modification,,
-pid_i_204283,pid_i_204283,modification,,
-pid_i_204310,pid_i_204310,modification,,
-pid_i_204311,pid_i_204311,modification,,
-pid_i_204282,pid_i_204282,modification,,
-pid_i_204289,pid_i_204289,modification,,
-pid_i_204288,pid_i_204288,modification,,
-pid_i_204285,pid_i_204285,modification,,
-pid_i_204284,pid_i_204284,modification,,
-pid_i_204287,pid_i_204287,modification,,
-pid_i_204286,pid_i_204286,modification,,
-[P19174::P16885:],,[PLCgamma1::PLCgamma2:],protein,PLC-gamma family,PLC-gamma family
-[P28482|Mod60|active::P27361|Mod61|active:]|active,P28482(ERK2)|phosphorylation@182@T:phosphorylation@184@Y|active::P27361(ERK1)|phosphorylation@201@T:phosphorylation@203@Y|active:,[ERK2|Mod60|active::ERK1|Mod61|active:]|active,protein,ERK1-2-active{+},ERK1-2-active
-[P28482|Mod60|active::P27361|Mod61|active:]|active@plasma_membrane,P28482(ERK2)|phosphorylation@182@T:phosphorylation@184@Y|active::P27361(ERK1)|phosphorylation@201@T:phosphorylation@203@Y|active:,[ERK2|Mod60|active::ERK1|Mod61|active:]|active@plasma_membrane,protein,ERK1-2-active{+}[pm],ERK1-2-active
-[Q00722::Q9NQ66::Q01970:],,[PLC_beta_2::PLC_beta_1::PLC_beta_3:],protein,PLC beta,PLC beta
-[pid_m_208725::pid_m_208726::pid_m_208721::pid_m_208720::pid_m_203997::pid_m_208727::pid_m_208723::pid_m_204361::pid_m_208724:]|active@plasma_membrane,,[PI3K-delta::PI3K_p110-delta/p85-beta::PI3K_p110-alpha/p55-gamma::PI3K_p110-alpha/p85-beta::PI3K::PI3K_p110-delta/p55-gamma::PI3K_p110-beta/p55-gamma::PI3K-beta::PI3K_p110-beta/p85-beta:]|active@plasma_membrane,complex,PI3K Class IA family{+}[pm],PI3K Class IA family
-[pid_m_208725::pid_m_208726::pid_m_208721::pid_m_208720::pid_m_203997::pid_m_208727::pid_m_208723::pid_m_204361::pid_m_208724:]|inactive,,[PI3K-delta::PI3K_p110-delta/p85-beta::PI3K_p110-alpha/p55-gamma::PI3K_p110-alpha/p85-beta::PI3K::PI3K_p110-delta/p55-gamma::PI3K_p110-beta/p55-gamma::PI3K-beta::PI3K_p110-beta/p85-beta:]|inactive,complex,PI3K Class IA family{-},PI3K Class IA family
-[P01112::P01116::P01111::P01118:],,[H-RAS_isoform_1::K-RAS_isoform_2A::H-RAS_isoform_2::N-RAS::K-RAS_isoform_2B:],protein,RAS family,RAS family
-[O43639::P16333:],,[NCK2::NCK1:],protein,NCK1-2,NCK1-2
-P06396,P06396,Gelsolin_fragment_2,protein,Gelsolin fragment 2,Gelsolin fragment 2
-P06396|active@actin_cytoskeleton,P06396,Gelsolin|active@actin_cytoskeleton,protein,Gelsolin{+}[ac],Gelsolin
-P18031,P18031,PTP1B,protein,PTP1B,PTP1B
-P18031|Mod165|active,P18031,phosphorylation@66@Y,PTP1B|Mod165|active,protein,PTP1B{+},PTP1B
-Q13177,Q13177,PAK2,protein,PAK2,PAK2
-Q13177|Mod33|active,Q13177,phosphorylation@141@S,PAK2|Mod33|active,protein,PAK2{+},PAK2
-P07948,P07948,LYN,protein,LYN,LYN
-P07948|Mod54|active,P07948,phosphorylation@396@Y,LYN|Mod54|active,protein,LYN{+},LYN
-P15498,P15498,VAV1,protein,VAV1,VAV1
-P19174,P19174,PLCgamma1,protein,PLCgamma1,PLCgamma1
-P19174@cytoplasm,P19174,PLCgamma1@cytoplasm,protein,PLCgamma1[c],PLCgamma1
-P19174|Mod19|active,P19174,phosphorylation@771@Y:phosphorylation@783@Y:phosphorylation@1253@Y,PLCgamma1|Mod19|active,protein,PLCgamma1{+},PLCgamma1
-P19174|Mod47|active,P19174,phosphorylation@775@Y:phosphorylation@783@Y,PLCgamma1|Mod47|active,protein,PLCgamma1{+},PLCgamma1
-P62993,P62993,GRB2,protein,GRB2,GRB2
-pid_m_200526,GDP,compound,GDP,GDP
-pid_m_200527,GTP,compound,GTP,GTP
-Q07889,Q07889,SOS1,protein,SOS1,SOS1
-Q07889|Mod49|inactive,Q07889,phosphorylation@0@X,SOS1|Mod49|inactive,protein,SOS1{-},SOS1
-Q07889|active,Q07889,SOS1|active,protein,SOS1{+},SOS1
-Q07889|inactive,Q07889,SOS1|inactive,protein,SOS1{-},SOS1
-P27361,P27361,ERK1,protein,ERK1,ERK1
-P27361|Mod61|active,P27361,phosphorylation@201@T:phosphorylation@203@Y,ERK1|Mod61|active,protein,ERK1{+},ERK1
-P28482,P28482,ERK2,protein,ERK2,ERK2
-P28482|Mod60|active,P28482,phosphorylation@182@T:phosphorylation@184@Y,ERK2|Mod60|active,protein,ERK2{+},ERK2
-pid_m_200537,PI-4-5-P2,compound,PI-4-5-P2,PI-4-5-P2
-pid_m_200537@plasma_membrane,PI-4-5-P2@plasma_membrane,compound,PI-4-5-P2[pm],PI-4-5-P2
-pid_m_200539,DAG,compound,DAG,DAG
-Q05397,Q05397,FAK,protein,FAK,FAK
-Q05397|Mod16|active,Q05397,phosphorylation@397@Y,FAK|Mod16|active,protein,FAK{+},FAK
-Q06124,Q06124,SHP2,protein,SHP2,SHP2
-Q06124|active@plasma_membrane,Q06124,SHP2|active@plasma_membrane,protein,SHP2{+}[pm],SHP2
-P06241,P06241,Fyn,protein,Fyn,Fyn
-P06241|Mod13,P06241,phosphorylation@420@Y,Fyn|Mod13,protein,Fyn,Fyn
-P06241|Mod13|active,P06241,phosphorylation@420@Y,Fyn|Mod13|active,protein,Fyn{+},Fyn
-Q9UQC2,Q9UQC2,GAB2,protein,GAB2,GAB2
-Q9UQC2|Mod6,Q9UQC2,phosphorylation@0@Y,GAB2|Mod6,protein,GAB2,GAB2
-P20936,P20936,RasGAP,protein,RasGAP,RasGAP
-P20936@cytoplasm,P20936,RasGAP@cytoplasm,protein,RasGAP[c],RasGAP
-P20936|active,P20936,RasGAP|active,protein,RasGAP{+},RasGAP
-pid_m_200599,IP3,compound,IP3,IP3
-P12931,P12931,Src,protein,Src,Src
-P12931|Mod12,P12931,phosphorylation@419@Y,Src|Mod12,protein,Src,Src
-P12931|Mod12|active,P12931,phosphorylation@419@Y,Src|Mod12|active,protein,Src{+},Src
-P29350,P29350,SHP1,protein,SHP1,SHP1
-P29350|active,P29350,SHP1|active,protein,SHP1{+},SHP1
-P16885,P16885,PLCgamma2,protein,PLCgamma2,PLCgamma2
-P16885|Mod48|active,P16885,phosphorylation@753@Y:phosphorylation@759@Y,PLCgamma2|Mod48|active,protein,PLCgamma2{+},PLCgamma2
-Q9Y490,Q9Y490,Talin,protein,Talin,Talin
-P42229,P42229,STAT5A,protein,STAT5A,STAT5A
-P42229|Mod85,P42229,phosphorylation@694@Y,STAT5A|Mod85,protein,STAT5A,STAT5A
-P42229|Mod85|active,P42229,phosphorylation@694@Y,STAT5A|Mod85|active,protein,STAT5A{+},STAT5A
-P51692,P51692,STAT5B,protein,STAT5B,STAT5B
-P51692|Mod88,P51692,phosphorylation@699@Y,STAT5B|Mod88,protein,STAT5B,STAT5B
-P51692|Mod88|active,P51692,phosphorylation@699@Y,STAT5B|Mod88|active,protein,STAT5B{+},STAT5B
-P00533,P00533,EGFR,protein,EGFR,EGFR
-P00533|Mod0,P00533,phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod0,protein,EGFR,EGFR
-P00533|Mod0|active,P00533,phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod0|active,protein,EGFR{+},EGFR
-P00533|Mod111,P00533,phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod111,protein,EGFR,EGFR
-P00533|Mod63,P00533,phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod63,protein,EGFR,EGFR
-P00533|Mod83,P00533,phosphorylation@654@T:phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod83,protein,EGFR,EGFR
-Q13009,Q13009,Tiam1,protein,Tiam1,Tiam1
-Q13480,Q13480,Gab1,protein,Gab1,Gab1
-Q13480@plasma_membrane,Q13480,Gab1@plasma_membrane,protein,Gab1[pm],Gab1
-Q13480|Mod39,Q13480,phosphorylation@527@Y:phosphorylation@659@Y,Gab1|Mod39,protein,Gab1,Gab1
-Q13480|Mod39|inactive,Q13480,phosphorylation@527@Y:phosphorylation@659@Y,Gab1|Mod39|inactive,protein,Gab1{-},Gab1
-Q13480|Mod42,Q13480,phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,Gab1|Mod42,protein,Gab1,Gab1
-Q13480|Mod42|active,Q13480,phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,Gab1|Mod42|active,protein,Gab1{+},Gab1
-Q13480|Mod7,Q13480,phosphorylation@0@Y,Gab1|Mod7,protein,Gab1,Gab1
-O43639,O43639,NCK2,protein,NCK2,NCK2
-P16333,P16333,NCK1,protein,NCK1,NCK1
-P07947,P07947,Yes,protein,Yes,Yes
-P07947|Mod11,P07947,phosphorylation@425@Y,Yes|Mod11,protein,Yes,Yes
-P07947|Mod11|active,P07947,phosphorylation@425@Y,Yes|Mod11|active,protein,Yes{+},Yes
-P06239,P06239,LCK,protein,LCK,LCK
-P06239|Mod105|active,P06239,phosphorylation@393@Y,LCK|Mod105|active,protein,LCK{+},LCK
-P42224,P42224,STAT1,protein,STAT1,STAT1
-P42224@cytoplasm,P42224,STAT1@cytoplasm,protein,STAT1[c],STAT1
-P42224|Mod24,P42224,phosphorylation@701@Y,STAT1|Mod24,protein,STAT1,STAT1
-P42224|Mod24@cytoplasm,P42224,phosphorylation@701@Y,STAT1|Mod24@cytoplasm,protein,STAT1[c],STAT1
-P40763,P40763,STAT3,protein,STAT3,STAT3
-P40763@cytoplasm,P40763,STAT3@cytoplasm,protein,STAT3[c],STAT3
-P40763|Mod163,P40763,phosphorylation@705@Y,STAT3|Mod163,protein,STAT3,STAT3
-P40763|Mod163@cytoplasm,P40763,phosphorylation@705@Y,STAT3|Mod163@cytoplasm,protein,STAT3[c],STAT3
-P40763|Mod25,P40763,phosphorylation@705@Y:phosphorylation@727@S,STAT3|Mod25,protein,STAT3,STAT3
-P08631,P08631,Hck,protein,Hck,Hck
-P08631|Mod56|active,P08631,phosphorylation@410@Y,Hck|Mod56|active,protein,Hck{+},Hck
-P09769,P09769,Fgr,protein,Fgr,Fgr
-P09769|Mod55|active,P09769,phosphorylation@412@Y,Fgr|Mod55|active,protein,Fgr{+},Fgr
-P51451,P51451,Blk,protein,Blk,Blk
-P51451|Mod102|active,P51451,phosphorylation@388@Y,Blk|Mod102|active,protein,Blk{+},Blk
-Q9NQ66,Q9NQ66,PLC_beta_1,protein,PLC beta 1,PLC beta 1
-Q00722,Q00722,PLC_beta_2,protein,PLC beta 2,PLC beta 2
-Q01970,Q01970,PLC_beta_3,protein,PLC beta 3,PLC beta 3
-P01116,P01116,K-RAS_isoform_2A,protein,K-RAS isoform 2A,K-RAS isoform 2A
-P01118,P01118,K-RAS_isoform_2B,protein,K-RAS isoform 2B,K-RAS isoform 2B
-P01112,P01112,H-RAS_isoform_2,protein,H-RAS isoform 2,H-RAS isoform 2
-P01111,P01111,N-RAS,protein,N-RAS,N-RAS
-Q07890,Q07890,SOS2,protein,SOS2,SOS2
-P63096,P63096,GNAI1,protein,GNAI1,GNAI1
-P04899,P04899,GNAI2,protein,GNAI2,GNAI2
-P08754,P08754,GNAI3,protein,GNAI3,GNAI3
-P09471,P09471,GNAO1,protein,GNAO1,GNAO1
-P29777,P29777,GNAO2,protein,GNAO2,GNAO2
-P19086,P19086,GNAZ,protein,GNAZ,GNAZ
-Q13153,Q13153,PAK1,protein,PAK1,PAK1
-Q13153|Mod34|active,Q13153,phosphorylation@0@S,PAK1|Mod34|active,protein,PAK1{+},PAK1
-O75914,O75914,PAK3,protein,PAK3,PAK3
-O75914|Mod32|active,O75914,phosphorylation@0@S,PAK3|Mod32|active,protein,PAK3{+},PAK3
-P06396-P1,P06396-P1,Gelsolin_fragment_1,protein,Gelsolin fragment 1,Gelsolin fragment 1
-Q8TCU6,Q8TCU6,PREX1,protein,PREX1,PREX1
-Q15052,Q15052,ARGEF6,protein,ARGEF6,ARGEF6
-Q14155,Q14155,ARHGEF7,protein,ARHGEF7,ARHGEF7
-P29353,P29353,p66_SHC,protein,p66 SHC,p66 SHC
-P29353|Mod30,P29353,phosphorylation@349@Y:phosphorylation@350@Y:phosphorylation@427@Y,p46_SHC|Mod30,protein,p46 SHC,p46 SHC
-P29353|Mod79,P29353,phosphorylation@317@Y,p46_SHC|Mod79,protein,p46 SHC,p46 SHC
-P29353|Mod99,P29353,phosphorylation@0@Y,p46_SHC|Mod99,protein,p46 SHC,p46 SHC
-P29353|Mod10,P29353,phosphorylation@317@Y,p52_SHC|Mod10,protein,p52 SHC,p52 SHC
-P29353|Mod10|active,P29353,phosphorylation@317@Y,p52_SHC|Mod10|active,protein,p52 SHC{+},p52 SHC
-P29353|Mod31,P29353,phosphorylation@349@Y:phosphorylation@350@Y:phosphorylation@427@Y,p52_SHC|Mod31,protein,p52 SHC,p52 SHC
-O96013,O96013,PAK4,protein,PAK4,PAK4
-Q99755,Q99755,PIP5K1A,protein,PIP5K1A,PIP5K1A
-O14986,O14986,PIP5K1B,protein,PIP5K1B,PIP5K1B
-O60331,O60331,PIP5K1C,protein,PIP5K1C,PIP5K1C
-O60331@plasma_membrane,O60331,PIP5K1C@plasma_membrane,protein,PIP5K1C[pm],PIP5K1C
-O60331|Mod67,O60331,phosphorylation@639@Y,PIP5K1C|Mod67,protein,PIP5K1C,PIP5K1C
-O60331|Mod67@plasma_membrane,O60331,phosphorylation@639@Y,PIP5K1C|Mod67@plasma_membrane,protein,PIP5K1C[pm],PIP5K1C
-O00401,O00401,N-WASP,protein,N-WASP,N-WASP
-P01133,P01133,EGF,protein,EGF,EGF
-pid_m_202038,Phosphate,compound,Phosphate,Phosphate
-pid_m_202524,JAK1-JAK2,protein,JAK1-JAK2,JAK1-JAK2
-P29353|Mod4,P29353,phosphorylation@0@T:phosphorylation@0@S:phosphorylation@0@Y,p66_SHC|Mod4,protein,p66 SHC,p66 SHC
-P29353|Mod59,P29353,phosphorylation@0@Y,p66_SHC|Mod59,protein,p66 SHC,p66 SHC
-pid_m_203997,PI3K,complex,PI3K,PI3K
-pid_m_204361,PI3K-beta,complex,PI3K-beta,PI3K-beta
-[P62993:Q07889]@cytoplasm,,[GRB2:SOS1]@cytoplasm,complex,GRB2/SOS1[c],GRB2/SOS1
-[pid_m_200093:pid_m_200526]|inactive,,[RAS_family:GDP]|inactive,complex,RAS family/GDP{-},RAS family/GDP
-[pid_m_200093:pid_m_200527]|active@plasma_membrane,,[RAS_family:GTP]|active@plasma_membrane,complex,RAS family/GTP{+}[pm],RAS family/GTP
-[P06396:pid_m_200537]@plasma_membrane,,[Gelsolin:PI-4-5-P2]@plasma_membrane,complex,Gelsolin/PI-4-5-P2[pm],Gelsolin/PI-4-5-P2
-[P00533|Mod0:P01133:P62993:Q13480|Mod42]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GRB2:Gab1|Mod42]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2/GAB1{+}[itm],EGFR/EGFR/EGF/EGF/GRB2/GAB1
-[P00533|Mod0:P01133]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{+}[itm],EGFR/EGFR/EGF/EGF
-[P00533|Mod0:P01133]|inactive@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF]|inactive@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{-}[itm],EGFR/EGFR/EGF/EGF
-[P00533:P01133]|inactive@integral_to_membrane,,[EGFR:EGF]|inactive@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{-}[itm],EGFR/EGFR/EGF/EGF
-[P00533|Mod0:P01133:P62993:Q07889|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q07889(SOS1)|active,[EGFR|Mod0:EGF:GRB2:SOS1|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2/SOS1{+}[itm],EGFR/EGFR/EGF/EGF/GRB2/SOS1
-[P00533|Mod0:P01133:P29353|Mod10]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y,[EGFR|Mod0:EGF:p52_SHC|Mod10]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p52 SHC{+}[itm],EGFR/EGFR/EGF/EGF/p52 SHC
-[P00533|Mod0:P01133:P29353|Mod10]|inactive@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y,[EGFR|Mod0:EGF:p52_SHC|Mod10]|inactive@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p52 SHC{-}[itm],EGFR/EGFR/EGF/EGF/p52 SHC
-[P00533|Mod0:P01133:P29353|Mod10|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y|active,[EGFR|Mod0:EGF:p52_SHC|Mod10|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p52 SHC{+}[itm],EGFR/EGFR/EGF/EGF/p52 SHC
-[P00533|Mod0:P01133:P29353|Mod10:P62993:Q07889|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y:Q07889(SOS1)|active,[EGFR|Mod0:EGF:p52_SHC|Mod10:GRB2:SOS1|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p52 SHC/GRB2/SOS1{+}[itm],EGFR/EGFR/EGF/EGF/p52 SHC/GRB2/SOS1
-[P00533|Mod0:P01133:P29353|Mod79]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@317@Y,[EGFR|Mod0:EGF:p46_SHC|Mod79]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p46 SHC{+}[itm],EGFR/EGFR/EGF/EGF/p46 SHC
-[P00533|Mod0:P01133:P29353|Mod99]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@0@Y,[EGFR|Mod0:EGF:p46_SHC|Mod99]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p46 SHC{+}[itm],EGFR/EGFR/EGF/EGF/p46 SHC
-[P00533|Mod0:P01133:P29353|Mod99]|inactive@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@0@Y,[EGFR|Mod0:EGF:p46_SHC|Mod99]|inactive@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p46 SHC{-}[itm],EGFR/EGFR/EGF/EGF/p46 SHC
-[P00533|Mod0:P01133:P29353|Mod99:P62993:Q07889|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@0@Y:Q07889(SOS1)|active,[EGFR|Mod0:EGF:p46_SHC|Mod99:GRB2:SOS1|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p46 SHC/GRB2/SOS1{+}[itm],EGFR/EGFR/EGF/EGF/p46 SHC/GRB2/SOS1
-[P00533|Mod111:P01133]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod111:EGF]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{+}[itm],EGFR/EGFR/EGF/EGF
-[P00533|Mod0:P01133:P20936|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P20936(RasGAP)|active,[EGFR|Mod0:EGF:RasGAP|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/RasGAP{+}[itm],EGFR/EGFR/EGF/EGF/RasGAP
-[P00533:P00533|Mod0:P01133]|inactive@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR:EGFR|Mod0:EGF]|inactive@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{-}[itm],EGFR/EGFR/EGF/EGF
-[P00533|Mod0:P01133:P62993]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF:GRB2]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2{+}[itm],EGFR/EGFR/EGF/EGF/GRB2
-[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y|active,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1
-[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1
-[P00533|Mod0:P01133:P62993:Q13480|Mod39]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@527@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GRB2:Gab1|Mod39]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2/GAB1{+}[itm],EGFR/EGFR/EGF/EGF/GRB2/GAB1
-[P00533|Mod0|active:P01133:P63096:P08754:Q13480|Mod39|inactive]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y|active:Q13480(Gab1)|phosphorylation@527@Y:phosphorylation@659@Y|inactive,[EGFR|Mod0|active:EGF:GNAI1:GNAI3:Gab1|Mod39|inactive]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1
-[P00533|Mod0:P01133:P62993:Q13480|Mod42:P20936|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y:P20936(RasGAP)|active,[EGFR|Mod0:EGF:GRB2:Gab1|Mod42:RasGAP|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2/GAB1/RasGAP{+}[itm],EGFR/EGFR/EGF/EGF/GRB2/GAB1/RasGAP
-[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod39]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@527@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod39]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1
-[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42:P20936]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42:RasGAP]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP{+}[itm],EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP
-[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42:P20936|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y:P20936(RasGAP)|active,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42:RasGAP|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP{+}[itm],EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP
-[pid_m_200120:Q13153],,[NCK1-2:PAK1],complex,NCK1-2/PAK1,NCK1-2/PAK1
-[P00533|Mod0:P00533|Mod63:P01133:pid_m_200120:Q13153]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P00533(EGFR)|phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGFR|Mod63:EGF:NCK1-2:PAK1]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/NCK1-2/PAK1{+}[itm],EGFR/EGFR/EGF/EGF/NCK1-2/PAK1
-[P62993:Q13153],,[GRB2:PAK1],complex,GRB2/PAK1,GRB2/PAK1
-[P00533|Mod0:P00533|Mod63:P01133:P62993:Q13153]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P00533(EGFR)|phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGFR|Mod63:EGF:GRB2:PAK1]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2/PAK1{+}[itm],EGFR/EGFR/EGF/EGF/GRB2/PAK1
-[P62993:O00401],,[GRB2:N-WASP],complex,GRB2/N-WASP,GRB2/N-WASP
-[P00533|Mod0:P01133:P62993:O00401]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF:GRB2:N-WASP]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/GRB2/N-WASP{+}[itm],EGFR/EGFR/EGF/EGF/GRB2/N-WASP
-[P00533|Mod0:P01133:P19174|Mod19|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P19174(PLCgamma1)|phosphorylation@771@Y:phosphorylation@783@Y:phosphorylation@1253@Y|active,[EGFR|Mod0:EGF:PLCgamma1|Mod19|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/PLCgamma1{+}[itm],EGFR/EGFR/EGF/EGF/PLCgamma1
-[P00533|Mod0:P01133:pid_m_202524]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF:JAK1-JAK2]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/JAK1-JAK2{+}[itm],EGFR/EGFR/EGF/EGF/JAK1-JAK2
-[P62993:Q07889|Mod49|inactive]@cytoplasm,Q07889(SOS1)|phosphorylation@0@X|inactive,[GRB2:SOS1|Mod49|inactive]@cytoplasm,complex,GRB2/SOS1[c],GRB2/SOS1
-[P00533|Mod0:P01133:P29353|Mod59]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p66 SHC)|phosphorylation@0@Y,[EGFR|Mod0:EGF:p66_SHC|Mod59]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/p66 SHC{+}[itm],EGFR/EGFR/EGF/EGF/p66 SHC
-[P00533|Mod0|active:P01133]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y|active,[EGFR|Mod0|active:EGF]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{+}[itm],EGFR/EGFR/EGF/EGF
-[P29353|Mod4:P62993:Q07889|inactive]@cytoplasm,P29353(p66 SHC)|phosphorylation@0@T:phosphorylation@0@S:phosphorylation@0@Y:Q07889(SOS1)|inactive,[p66_SHC|Mod4:GRB2:SOS1|inactive]@cytoplasm,complex,p66 SHC/GRB2/SOS1[c],p66 SHC/GRB2/SOS1
-[P00533|Mod0:P01133:Q05397|Mod16|active]|active@integral_to_membrane,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q05397(FAK)|phosphorylation@397@Y|active,[EGFR|Mod0:EGF:FAK|Mod16|active]|active@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF/FAK{+}[itm],EGFR/EGFR/EGF/EGF/FAK
-[P00533|Mod83:P01133]|inactive@integral_to_membrane,P00533(EGFR)|phosphorylation@654@T:phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod83:EGF]|inactive@integral_to_membrane,complex,EGFR/EGFR/EGF/EGF{-}[itm],EGFR/EGFR/EGF/EGF
-[O60331|Mod67:Q9Y490],O60331(PIP5K1C)|phosphorylation@639@Y,[PIP5K1C|Mod67:Talin],complex,PIP5K1C/Talin,PIP5K1C/Talin
-pid_m_208717,PI3K-gamma/p84,complex,PI3K-gamma/p84,PI3K-gamma/p84
-pid_m_208718,PI3K-gamma/p101,complex,PI3K-gamma/p101,PI3K-gamma/p101
-pid_m_208720,PI3K_p110-alpha/p85-beta,complex,PI3K p110-alpha/p85-beta,PI3K p110-alpha/p85-beta
-pid_m_208721,PI3K_p110-alpha/p55-gamma,complex,PI3K p110-alpha/p55-gamma,PI3K p110-alpha/p55-gamma
-pid_m_208723,PI3K_p110-beta/p55-gamma,complex,PI3K p110-beta/p55-gamma,PI3K p110-beta/p55-gamma
-pid_m_208724,PI3K_p110-beta/p85-beta,complex,PI3K p110-beta/p85-beta,PI3K p110-beta/p85-beta
-pid_m_208725,PI3K-delta,complex,PI3K-delta,PI3K-delta
-pid_m_208726,PI3K_p110-delta/p85-beta,complex,PI3K p110-delta/p85-beta,PI3K p110-delta/p85-beta
-pid_m_208727,PI3K_p110-delta/p55-gamma,complex,PI3K p110-delta/p55-gamma,PI3K p110-delta/p55-gamma
-Signaling events mediated by focal adhesion kinase,pathway
-ErbB1 downstream signaling,pathway
-Internalization of ErbB1,pathway
-Posttranslational regulation of adherens junction stability and dissassembly,pathway
-Signaling_events_mediated_by_focal_adhesion_kinase,Signaling_events_mediated_by_focal_adhesion_kinase,Signaling_events_mediated_by_focal_adhesion_kinase
-ErbB1_downstream_signaling,ErbB1_downstream_signaling,ErbB1_downstream_signaling
-Internalization_of_ErbB1,Internalization_of_ErbB1,Internalization_of_ErbB1
-Posttranslational_regulation_of_adherens_junction_stability_and_dissassembly,Posttranslational_regulation_of_adherens_junction_stability_and_dissassembly,Posttranslational_regulation_of_adherens_junction_stability_and_dissassembly
+name,Uniprot_ID,MODIFICATIONS,ID_PREFERRED_SYMBOL,PREFERRED_SYMBOL_EXT,PID,PREFERRED_SYMBOL,NODE_TYPE
+pid_i_204337,,,pid_i_204337,,pid_i_204337,,modification
+pid_i_204336,,,pid_i_204336,,pid_i_204336,,modification
+cell_migration,,,cell_migration,cell_migration,pid_i_204326,cell_migration,biological_process
+pid_i_204338,,,pid_i_204338,,pid_i_204338,,modification
+pid_i_204290,,,pid_i_204290,,pid_i_204290,,modification
+pid_i_204300,,,pid_i_204300,,pid_i_204300,,modification
+pid_i_204340,,,pid_i_204340,,pid_i_204340,,pathway
+pid_i_204341,,,pid_i_204341,,pid_i_204341,,pathway
+pid_i_204301,,,pid_i_204301,,pid_i_204301,,modification
+pid_i_204302,,,pid_i_204302,,pid_i_204302,,modification
+pid_i_204294,,,pid_i_204294,,pid_i_204294,,modification
+pid_i_204293,,,pid_i_204293,,pid_i_204293,,modification
+pid_i_204292,,,pid_i_204292,,pid_i_204292,,modification
+pid_i_204291,,,pid_i_204291,,pid_i_204291,,modification
+pid_i_204298,,,pid_i_204298,,pid_i_204298,,modification
+pid_i_204297,,,pid_i_204297,,pid_i_204297,,modification
+pid_i_204296,,,pid_i_204296,,pid_i_204296,,translocation
+pid_i_204295,,,pid_i_204295,,pid_i_204295,,translocation
+pid_i_204299,,,pid_i_204299,,pid_i_204299,,modification
+pid_i_204328,,,pid_i_204328,,pid_i_204328,,subnet
+pid_i_204325,,,pid_i_204325,,pid_i_204325,,modification
+pid_i_204329,,,pid_i_204329,,pid_i_204329,,subnet
+pid_i_204330,,,pid_i_204330,,pid_i_204330,,subnet
+pid_i_204331,,,pid_i_204331,,pid_i_204331,,subnet
+pid_i_204334,,,pid_i_204334,,pid_i_204334,,subnet
+pid_i_204335,,,pid_i_204335,,pid_i_204335,,subnet
+pid_i_204332,,,pid_i_204332,,pid_i_204332,,subnet
+pid_i_204333,,,pid_i_204333,,pid_i_204333,,subnet
+pid_i_204319,,,pid_i_204319,,pid_i_204319,,modification
+pid_i_204318,,,pid_i_204318,,pid_i_204318,,modification
+pid_i_204315,,,pid_i_204315,,pid_i_204315,,modification
+pid_i_204314,,,pid_i_204314,,pid_i_204314,,modification
+pid_i_204317,,,pid_i_204317,,pid_i_204317,,modification
+pid_i_204316,,,pid_i_204316,,pid_i_204316,,modification
+pid_i_204322,,,pid_i_204322,,pid_i_204322,,modification
+pid_i_204323,,,pid_i_204323,,pid_i_204323,,subnet
+pid_i_204324,,,pid_i_204324,,pid_i_204324,,subnet
+pid_i_204320,,,pid_i_204320,,pid_i_204320,,modification
+pid_i_204279,,,pid_i_204279,,pid_i_204279,,modification
+pid_i_204278,,,pid_i_204278,,pid_i_204278,,modification
+pid_i_204277,,,pid_i_204277,,pid_i_204277,,modification
+pid_i_204276,,,pid_i_204276,,pid_i_204276,,modification
+pid_i_204275,,,pid_i_204275,,pid_i_204275,,modification
+pid_i_204309,,,pid_i_204309,,pid_i_204309,,modification
+cortical_actin_cytoskeleton_organization,,,cortical_actin_cytoskeleton_organization,cortical_actin_cytoskeleton_organization,pid_i_204308,cortical_actin_cytoskeleton_organization,biological_process
+pid_i_204307,,,pid_i_204307,,pid_i_204307,,modification
+pid_i_204304,,,pid_i_204304,,pid_i_204304,,modification
+pid_i_204303,,,pid_i_204303,,pid_i_204303,,modification
+pid_i_204312,,,pid_i_204312,,pid_i_204312,,modification
+pid_i_204281,,,pid_i_204281,,pid_i_204281,,modification
+pid_i_204313,,,pid_i_204313,,pid_i_204313,,modification
+pid_i_204280,,,pid_i_204280,,pid_i_204280,,modification
+pid_i_204283,,,pid_i_204283,,pid_i_204283,,modification
+pid_i_204310,,,pid_i_204310,,pid_i_204310,,modification
+pid_i_204311,,,pid_i_204311,,pid_i_204311,,modification
+pid_i_204282,,,pid_i_204282,,pid_i_204282,,modification
+pid_i_204289,,,pid_i_204289,,pid_i_204289,,modification
+pid_i_204288,,,pid_i_204288,,pid_i_204288,,modification
+pid_i_204285,,,pid_i_204285,,pid_i_204285,,modification
+pid_i_204284,,,pid_i_204284,,pid_i_204284,,modification
+pid_i_204287,,,pid_i_204287,,pid_i_204287,,modification
+pid_i_204286,,,pid_i_204286,,pid_i_204286,,modification
+[P19174::P16885:],,,[PLCgamma1::PLCgamma2:],PLC-gamma family,pid_m_200052,PLC-gamma family,protein
+[P28482|Mod60|active::P27361|Mod61|active:]|active,,P28482(ERK2)|phosphorylation@182@T:phosphorylation@184@Y|active::P27361(ERK1)|phosphorylation@201@T:phosphorylation@203@Y|active:,[ERK2|Mod60|active::ERK1|Mod61|active:]|active,ERK1-2-active{+},pid_m_200056,ERK1-2-active,protein
+[P28482|Mod60|active::P27361|Mod61|active:]|active@plasma_membrane,,P28482(ERK2)|phosphorylation@182@T:phosphorylation@184@Y|active::P27361(ERK1)|phosphorylation@201@T:phosphorylation@203@Y|active:,[ERK2|Mod60|active::ERK1|Mod61|active:]|active@plasma_membrane,ERK1-2-active{+}[pm],pid_m_200056,ERK1-2-active,protein
+[Q00722::Q9NQ66::Q01970:],,,[PLC_beta_2::PLC_beta_1::PLC_beta_3:],PLC beta,pid_m_200076,PLC beta,protein
+[pid_m_208725::pid_m_208726::pid_m_208721::pid_m_208720::pid_m_203997::pid_m_208727::pid_m_208723::pid_m_204361::pid_m_208724:]|active@plasma_membrane,,,[PI3K-delta::PI3K_p110-delta/p85-beta::PI3K_p110-alpha/p55-gamma::PI3K_p110-alpha/p85-beta::PI3K::PI3K_p110-delta/p55-gamma::PI3K_p110-beta/p55-gamma::PI3K-beta::PI3K_p110-beta/p85-beta:]|active@plasma_membrane,PI3K Class IA family{+}[pm],pid_m_200079,PI3K Class IA family,complex
+[pid_m_208725::pid_m_208726::pid_m_208721::pid_m_208720::pid_m_203997::pid_m_208727::pid_m_208723::pid_m_204361::pid_m_208724:]|inactive,,,[PI3K-delta::PI3K_p110-delta/p85-beta::PI3K_p110-alpha/p55-gamma::PI3K_p110-alpha/p85-beta::PI3K::PI3K_p110-delta/p55-gamma::PI3K_p110-beta/p55-gamma::PI3K-beta::PI3K_p110-beta/p85-beta:]|inactive,PI3K Class IA family{-},pid_m_200079,PI3K Class IA family,complex
+[P01112::P01116::P01111::P01118:],,,[H-RAS_isoform_1::K-RAS_isoform_2A::H-RAS_isoform_2::N-RAS::K-RAS_isoform_2B:],RAS family,pid_m_200093,RAS family,protein
+[O43639::P16333:],,,[NCK2::NCK1:],NCK1-2,pid_m_200120,NCK1-2,protein
+P06396,P06396,,Gelsolin_fragment_2,Gelsolin fragment 2,pid_m_201534,Gelsolin fragment 2,protein
+P06396|active@actin_cytoskeleton,P06396,,Gelsolin|active@actin_cytoskeleton,Gelsolin{+}[ac],pid_m_200358,Gelsolin,protein
+P18031,P18031,,PTP1B,PTP1B,pid_m_200377,PTP1B,protein
+P18031|Mod165|active,P18031,phosphorylation@66@Y,PTP1B|Mod165|active,PTP1B{+},pid_m_200377,PTP1B,protein
+Q13177,Q13177,,PAK2,PAK2,pid_m_200410,PAK2,protein
+Q13177|Mod33|active,Q13177,phosphorylation@141@S,PAK2|Mod33|active,PAK2{+},pid_m_200410,PAK2,protein
+P07948,P07948,,LYN,LYN,pid_m_200517,LYN,protein
+P07948|Mod54|active,P07948,phosphorylation@396@Y,LYN|Mod54|active,LYN{+},pid_m_200517,LYN,protein
+P15498,P15498,,VAV1,VAV1,pid_m_200518,VAV1,protein
+P19174,P19174,,PLCgamma1,PLCgamma1,pid_m_200520,PLCgamma1,protein
+P19174@cytoplasm,P19174,,PLCgamma1@cytoplasm,PLCgamma1[c],pid_m_200520,PLCgamma1,protein
+P19174|Mod19|active,P19174,phosphorylation@771@Y:phosphorylation@783@Y:phosphorylation@1253@Y,PLCgamma1|Mod19|active,PLCgamma1{+},pid_m_200520,PLCgamma1,protein
+P19174|Mod47|active,P19174,phosphorylation@775@Y:phosphorylation@783@Y,PLCgamma1|Mod47|active,PLCgamma1{+},pid_m_200520,PLCgamma1,protein
+P62993,P62993,,GRB2,GRB2,pid_m_200522,GRB2,protein
+pid_m_200526,,,GDP,GDP,pid_m_200526,GDP,compound
+pid_m_200527,,,GTP,GTP,pid_m_200527,GTP,compound
+Q07889,Q07889,,SOS1,SOS1,pid_m_200528,SOS1,protein
+Q07889|Mod49|inactive,Q07889,phosphorylation@0@X,SOS1|Mod49|inactive,SOS1{-},pid_m_200528,SOS1,protein
+Q07889|active,Q07889,,SOS1|active,SOS1{+},pid_m_200528,SOS1,protein
+Q07889|inactive,Q07889,,SOS1|inactive,SOS1{-},pid_m_200528,SOS1,protein
+P27361,P27361,,ERK1,ERK1,pid_m_200532,ERK1,protein
+P27361|Mod61|active,P27361,phosphorylation@201@T:phosphorylation@203@Y,ERK1|Mod61|active,ERK1{+},pid_m_200532,ERK1,protein
+P28482,P28482,,ERK2,ERK2,pid_m_200533,ERK2,protein
+P28482|Mod60|active,P28482,phosphorylation@182@T:phosphorylation@184@Y,ERK2|Mod60|active,ERK2{+},pid_m_200533,ERK2,protein
+pid_m_200537,,,PI-4-5-P2,PI-4-5-P2,pid_m_200537,PI-4-5-P2,compound
+pid_m_200537@plasma_membrane,,,PI-4-5-P2@plasma_membrane,PI-4-5-P2[pm],pid_m_200537,PI-4-5-P2,compound
+pid_m_200539,,,DAG,DAG,pid_m_200539,DAG,compound
+Q05397,Q05397,,FAK,FAK,pid_m_200545,FAK,protein
+Q05397|Mod16|active,Q05397,phosphorylation@397@Y,FAK|Mod16|active,FAK{+},pid_m_200545,FAK,protein
+Q06124,Q06124,,SHP2,SHP2,pid_m_200554,SHP2,protein
+Q06124|active@plasma_membrane,Q06124,,SHP2|active@plasma_membrane,SHP2{+}[pm],pid_m_200554,SHP2,protein
+P06241,P06241,,Fyn,Fyn,pid_m_200564,Fyn,protein
+P06241|Mod13,P06241,phosphorylation@420@Y,Fyn|Mod13,Fyn,pid_m_200564,Fyn,protein
+P06241|Mod13|active,P06241,phosphorylation@420@Y,Fyn|Mod13|active,Fyn{+},pid_m_200564,Fyn,protein
+Q9UQC2,Q9UQC2,,GAB2,GAB2,pid_m_200565,GAB2,protein
+Q9UQC2|Mod6,Q9UQC2,phosphorylation@0@Y,GAB2|Mod6,GAB2,pid_m_200565,GAB2,protein
+P20936,P20936,,RasGAP,RasGAP,pid_m_200568,RasGAP,protein
+P20936@cytoplasm,P20936,,RasGAP@cytoplasm,RasGAP[c],pid_m_200568,RasGAP,protein
+P20936|active,P20936,,RasGAP|active,RasGAP{+},pid_m_200568,RasGAP,protein
+pid_m_200599,,,IP3,IP3,pid_m_200599,IP3,compound
+P12931,P12931,,Src,Src,pid_m_200605,Src,protein
+P12931|Mod12,P12931,phosphorylation@419@Y,Src|Mod12,Src,pid_m_200605,Src,protein
+P12931|Mod12|active,P12931,phosphorylation@419@Y,Src|Mod12|active,Src{+},pid_m_200605,Src,protein
+P29350,P29350,,SHP1,SHP1,pid_m_200617,SHP1,protein
+P29350|active,P29350,,SHP1|active,SHP1{+},pid_m_200617,SHP1,protein
+P16885,P16885,,PLCgamma2,PLCgamma2,pid_m_200621,PLCgamma2,protein
+P16885|Mod48|active,P16885,phosphorylation@753@Y:phosphorylation@759@Y,PLCgamma2|Mod48|active,PLCgamma2{+},pid_m_200621,PLCgamma2,protein
+Q9Y490,Q9Y490,,Talin,Talin,pid_m_200681,Talin,protein
+P42229,P42229,,STAT5A,STAT5A,pid_m_200703,STAT5A,protein
+P42229|Mod85,P42229,phosphorylation@694@Y,STAT5A|Mod85,STAT5A,pid_m_200703,STAT5A,protein
+P42229|Mod85|active,P42229,phosphorylation@694@Y,STAT5A|Mod85|active,STAT5A{+},pid_m_200703,STAT5A,protein
+P51692,P51692,,STAT5B,STAT5B,pid_m_200716,STAT5B,protein
+P51692|Mod88,P51692,phosphorylation@699@Y,STAT5B|Mod88,STAT5B,pid_m_200716,STAT5B,protein
+P51692|Mod88|active,P51692,phosphorylation@699@Y,STAT5B|Mod88|active,STAT5B{+},pid_m_200716,STAT5B,protein
+P00533,P00533,,EGFR,EGFR,pid_m_200725,EGFR,protein
+P00533|Mod0,P00533,phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod0,EGFR,pid_m_200725,EGFR,protein
+P00533|Mod0|active,P00533,phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod0|active,EGFR{+},pid_m_200725,EGFR,protein
+P00533|Mod111,P00533,phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod111,EGFR,pid_m_200725,EGFR,protein
+P00533|Mod63,P00533,phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod63,EGFR,pid_m_200725,EGFR,protein
+P00533|Mod83,P00533,phosphorylation@654@T:phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,EGFR|Mod83,EGFR,pid_m_200725,EGFR,protein
+Q13009,Q13009,,Tiam1,Tiam1,pid_m_200769,Tiam1,protein
+Q13480,Q13480,,Gab1,Gab1,pid_m_200785,Gab1,protein
+Q13480@plasma_membrane,Q13480,,Gab1@plasma_membrane,Gab1[pm],pid_m_200785,Gab1,protein
+Q13480|Mod39,Q13480,phosphorylation@527@Y:phosphorylation@659@Y,Gab1|Mod39,Gab1,pid_m_200785,Gab1,protein
+Q13480|Mod39|inactive,Q13480,phosphorylation@527@Y:phosphorylation@659@Y,Gab1|Mod39|inactive,Gab1{-},pid_m_200785,Gab1,protein
+Q13480|Mod42,Q13480,phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,Gab1|Mod42,Gab1,pid_m_200785,Gab1,protein
+Q13480|Mod42|active,Q13480,phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,Gab1|Mod42|active,Gab1{+},pid_m_200785,Gab1,protein
+Q13480|Mod7,Q13480,phosphorylation@0@Y,Gab1|Mod7,Gab1,pid_m_200785,Gab1,protein
+O43639,O43639,,NCK2,NCK2,pid_m_200803,NCK2,protein
+P16333,P16333,,NCK1,NCK1,pid_m_200807,NCK1,protein
+P07947,P07947,,Yes,Yes,pid_m_200918,Yes,protein
+P07947|Mod11,P07947,phosphorylation@425@Y,Yes|Mod11,Yes,pid_m_200918,Yes,protein
+P07947|Mod11|active,P07947,phosphorylation@425@Y,Yes|Mod11|active,Yes{+},pid_m_200918,Yes,protein
+P06239,P06239,,LCK,LCK,pid_m_200932,LCK,protein
+P06239|Mod105|active,P06239,phosphorylation@393@Y,LCK|Mod105|active,LCK{+},pid_m_200932,LCK,protein
+P42224,P42224,,STAT1,STAT1,pid_m_201101,STAT1,protein
+P42224@cytoplasm,P42224,,STAT1@cytoplasm,STAT1[c],pid_m_201101,STAT1,protein
+P42224|Mod24,P42224,phosphorylation@701@Y,STAT1|Mod24,STAT1,pid_m_201101,STAT1,protein
+P42224|Mod24@cytoplasm,P42224,phosphorylation@701@Y,STAT1|Mod24@cytoplasm,STAT1[c],pid_m_201101,STAT1,protein
+P40763,P40763,,STAT3,STAT3,pid_m_201105,STAT3,protein
+P40763@cytoplasm,P40763,,STAT3@cytoplasm,STAT3[c],pid_m_201105,STAT3,protein
+P40763|Mod163,P40763,phosphorylation@705@Y,STAT3|Mod163,STAT3,pid_m_201105,STAT3,protein
+P40763|Mod163@cytoplasm,P40763,phosphorylation@705@Y,STAT3|Mod163@cytoplasm,STAT3[c],pid_m_201105,STAT3,protein
+P40763|Mod25,P40763,phosphorylation@705@Y:phosphorylation@727@S,STAT3|Mod25,STAT3,pid_m_201105,STAT3,protein
+P08631,P08631,,Hck,Hck,pid_m_201217,Hck,protein
+P08631|Mod56|active,P08631,phosphorylation@410@Y,Hck|Mod56|active,Hck{+},pid_m_201217,Hck,protein
+P09769,P09769,,Fgr,Fgr,pid_m_201218,Fgr,protein
+P09769|Mod55|active,P09769,phosphorylation@412@Y,Fgr|Mod55|active,Fgr{+},pid_m_201218,Fgr,protein
+P51451,P51451,,Blk,Blk,pid_m_201232,Blk,protein
+P51451|Mod102|active,P51451,phosphorylation@388@Y,Blk|Mod102|active,Blk{+},pid_m_201232,Blk,protein
+Q9NQ66,Q9NQ66,,PLC_beta_1,PLC beta 1,pid_m_201264,PLC beta 1,protein
+Q00722,Q00722,,PLC_beta_2,PLC beta 2,pid_m_201265,PLC beta 2,protein
+Q01970,Q01970,,PLC_beta_3,PLC beta 3,pid_m_201266,PLC beta 3,protein
+P01116,P01116,,K-RAS_isoform_2A,K-RAS isoform 2A,pid_m_201285,K-RAS isoform 2A,protein
+P01118,P01118,,K-RAS_isoform_2B,K-RAS isoform 2B,pid_m_201286,K-RAS isoform 2B,protein
+P01112,P01112,,H-RAS_isoform_2,H-RAS isoform 2,pid_m_201288,H-RAS isoform 2,protein
+P01111,P01111,,N-RAS,N-RAS,pid_m_201289,N-RAS,protein
+Q07890,Q07890,,SOS2,SOS2,pid_m_201334,SOS2,protein
+P63096,P63096,,GNAI1,GNAI1,pid_m_201361,GNAI1,protein
+P04899,P04899,,GNAI2,GNAI2,pid_m_201362,GNAI2,protein
+P08754,P08754,,GNAI3,GNAI3,pid_m_201363,GNAI3,protein
+P09471,P09471,,GNAO1,GNAO1,pid_m_201364,GNAO1,protein
+P29777,P29777,,GNAO2,GNAO2,pid_m_201365,GNAO2,protein
+P19086,P19086,,GNAZ,GNAZ,pid_m_201366,GNAZ,protein
+Q13153,Q13153,,PAK1,PAK1,pid_m_201391,PAK1,protein
+Q13153|Mod34|active,Q13153,phosphorylation@0@S,PAK1|Mod34|active,PAK1{+},pid_m_201391,PAK1,protein
+O75914,O75914,,PAK3,PAK3,pid_m_201392,PAK3,protein
+O75914|Mod32|active,O75914,phosphorylation@0@S,PAK3|Mod32|active,PAK3{+},pid_m_201392,PAK3,protein
+P06396-P1,P06396-P1,,Gelsolin_fragment_1,Gelsolin fragment 1,pid_m_201533,Gelsolin fragment 1,protein
+Q8TCU6,Q8TCU6,,PREX1,PREX1,pid_m_201631,PREX1,protein
+Q15052,Q15052,,ARGEF6,ARGEF6,pid_m_201632,ARGEF6,protein
+Q14155,Q14155,,ARHGEF7,ARHGEF7,pid_m_201633,ARHGEF7,protein
+P29353,P29353,,p66_SHC,p66 SHC,pid_m_202525,p66 SHC,protein
+P29353|Mod30,P29353,phosphorylation@349@Y:phosphorylation@350@Y:phosphorylation@427@Y,p46_SHC|Mod30,p46 SHC,pid_m_201699,p46 SHC,protein
+P29353|Mod79,P29353,phosphorylation@317@Y,p46_SHC|Mod79,p46 SHC,pid_m_201699,p46 SHC,protein
+P29353|Mod99,P29353,phosphorylation@0@Y,p46_SHC|Mod99,p46 SHC,pid_m_201699,p46 SHC,protein
+P29353|Mod10,P29353,phosphorylation@317@Y,p52_SHC|Mod10,p52 SHC,pid_m_201700,p52 SHC,protein
+P29353|Mod10|active,P29353,phosphorylation@317@Y,p52_SHC|Mod10|active,p52 SHC{+},pid_m_201700,p52 SHC,protein
+P29353|Mod31,P29353,phosphorylation@349@Y:phosphorylation@350@Y:phosphorylation@427@Y,p52_SHC|Mod31,p52 SHC,pid_m_201700,p52 SHC,protein
+O96013,O96013,,PAK4,PAK4,pid_m_201705,PAK4,protein
+Q99755,Q99755,,PIP5K1A,PIP5K1A,pid_m_201706,PIP5K1A,protein
+O14986,O14986,,PIP5K1B,PIP5K1B,pid_m_201707,PIP5K1B,protein
+O60331,O60331,,PIP5K1C,PIP5K1C,pid_m_201708,PIP5K1C,protein
+O60331@plasma_membrane,O60331,,PIP5K1C@plasma_membrane,PIP5K1C[pm],pid_m_201708,PIP5K1C,protein
+O60331|Mod67,O60331,phosphorylation@639@Y,PIP5K1C|Mod67,PIP5K1C,pid_m_201708,PIP5K1C,protein
+O60331|Mod67@plasma_membrane,O60331,phosphorylation@639@Y,PIP5K1C|Mod67@plasma_membrane,PIP5K1C[pm],pid_m_201708,PIP5K1C,protein
+O00401,O00401,,N-WASP,N-WASP,pid_m_201789,N-WASP,protein
+P01133,P01133,,EGF,EGF,pid_m_201808,EGF,protein
+pid_m_202038,,,Phosphate,Phosphate,pid_m_202038,Phosphate,compound
+pid_m_202524,,,JAK1-JAK2,JAK1-JAK2,pid_m_202524,JAK1-JAK2,protein
+P29353|Mod4,P29353,phosphorylation@0@T:phosphorylation@0@S:phosphorylation@0@Y,p66_SHC|Mod4,p66 SHC,pid_m_202525,p66 SHC,protein
+P29353|Mod59,P29353,phosphorylation@0@Y,p66_SHC|Mod59,p66 SHC,pid_m_202525,p66 SHC,protein
+pid_m_203997,,,PI3K,PI3K,pid_m_203997,PI3K,complex
+pid_m_204361,,,PI3K-beta,PI3K-beta,pid_m_204361,PI3K-beta,complex
+[P62993:Q07889]@cytoplasm,,,[GRB2:SOS1]@cytoplasm,GRB2/SOS1[c],pid_m_204673,GRB2/SOS1,complex
+[pid_m_200093:pid_m_200526]|inactive,,,[RAS_family:GDP]|inactive,RAS family/GDP{-},pid_m_204675,RAS family/GDP,complex
+[pid_m_200093:pid_m_200527]|active@plasma_membrane,,,[RAS_family:GTP]|active@plasma_membrane,RAS family/GTP{+}[pm],pid_m_204677,RAS family/GTP,complex
+[P06396:pid_m_200537]@plasma_membrane,,,[Gelsolin:PI-4-5-P2]@plasma_membrane,Gelsolin/PI-4-5-P2[pm],pid_m_205991,Gelsolin/PI-4-5-P2,complex
+[P00533|Mod0:P01133:P62993:Q13480|Mod42]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GRB2:Gab1|Mod42]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2/GAB1{+}[itm],pid_m_207138,EGFR/EGFR/EGF/EGF/GRB2/GAB1,complex
+[P00533|Mod0:P01133]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF{+}[itm],pid_m_207146,EGFR/EGFR/EGF/EGF,complex
+[P00533|Mod0:P01133]|inactive@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF]|inactive@integral_to_membrane,EGFR/EGFR/EGF/EGF{-}[itm],pid_m_207146,EGFR/EGFR/EGF/EGF,complex
+[P00533:P01133]|inactive@integral_to_membrane,,,[EGFR:EGF]|inactive@integral_to_membrane,EGFR/EGFR/EGF/EGF{-}[itm],pid_m_207148,EGFR/EGFR/EGF/EGF,complex
+[P00533|Mod0:P01133:P62993:Q07889|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q07889(SOS1)|active,[EGFR|Mod0:EGF:GRB2:SOS1|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2/SOS1{+}[itm],pid_m_208319,EGFR/EGFR/EGF/EGF/GRB2/SOS1,complex
+[P00533|Mod0:P01133:P29353|Mod10]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y,[EGFR|Mod0:EGF:p52_SHC|Mod10]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p52 SHC{+}[itm],pid_m_208321,EGFR/EGFR/EGF/EGF/p52 SHC,complex
+[P00533|Mod0:P01133:P29353|Mod10]|inactive@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y,[EGFR|Mod0:EGF:p52_SHC|Mod10]|inactive@integral_to_membrane,EGFR/EGFR/EGF/EGF/p52 SHC{-}[itm],pid_m_208321,EGFR/EGFR/EGF/EGF/p52 SHC,complex
+[P00533|Mod0:P01133:P29353|Mod10|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y|active,[EGFR|Mod0:EGF:p52_SHC|Mod10|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p52 SHC{+}[itm],pid_m_208322,EGFR/EGFR/EGF/EGF/p52 SHC,complex
+[P00533|Mod0:P01133:P29353|Mod10:P62993:Q07889|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p52 SHC)|phosphorylation@317@Y:Q07889(SOS1)|active,[EGFR|Mod0:EGF:p52_SHC|Mod10:GRB2:SOS1|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p52 SHC/GRB2/SOS1{+}[itm],pid_m_208324,EGFR/EGFR/EGF/EGF/p52 SHC/GRB2/SOS1,complex
+[P00533|Mod0:P01133:P29353|Mod79]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@317@Y,[EGFR|Mod0:EGF:p46_SHC|Mod79]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p46 SHC{+}[itm],pid_m_208332,EGFR/EGFR/EGF/EGF/p46 SHC,complex
+[P00533|Mod0:P01133:P29353|Mod99]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@0@Y,[EGFR|Mod0:EGF:p46_SHC|Mod99]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p46 SHC{+}[itm],pid_m_208333,EGFR/EGFR/EGF/EGF/p46 SHC,complex
+[P00533|Mod0:P01133:P29353|Mod99]|inactive@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@0@Y,[EGFR|Mod0:EGF:p46_SHC|Mod99]|inactive@integral_to_membrane,EGFR/EGFR/EGF/EGF/p46 SHC{-}[itm],pid_m_208333,EGFR/EGFR/EGF/EGF/p46 SHC,complex
+[P00533|Mod0:P01133:P29353|Mod99:P62993:Q07889|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p46 SHC)|phosphorylation@0@Y:Q07889(SOS1)|active,[EGFR|Mod0:EGF:p46_SHC|Mod99:GRB2:SOS1|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p46 SHC/GRB2/SOS1{+}[itm],pid_m_208335,EGFR/EGFR/EGF/EGF/p46 SHC/GRB2/SOS1,complex
+[P00533|Mod111:P01133]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod111:EGF]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF{+}[itm],pid_m_208340,EGFR/EGFR/EGF/EGF,complex
+[P00533|Mod0:P01133:P20936|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P20936(RasGAP)|active,[EGFR|Mod0:EGF:RasGAP|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/RasGAP{+}[itm],pid_m_208343,EGFR/EGFR/EGF/EGF/RasGAP,complex
+[P00533:P00533|Mod0:P01133]|inactive@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR:EGFR|Mod0:EGF]|inactive@integral_to_membrane,EGFR/EGFR/EGF/EGF{-}[itm],pid_m_208350,EGFR/EGFR/EGF/EGF,complex
+[P00533|Mod0:P01133:P62993]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF:GRB2]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2{+}[itm],pid_m_208355,EGFR/EGFR/EGF/EGF/GRB2,complex
+[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y|active,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],pid_m_208359,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1,complex
+[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],pid_m_208361,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1,complex
+[P00533|Mod0:P01133:P62993:Q13480|Mod39]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@527@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GRB2:Gab1|Mod39]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2/GAB1{+}[itm],pid_m_208365,EGFR/EGFR/EGF/EGF/GRB2/GAB1,complex
+[P00533|Mod0|active:P01133:P63096:P08754:Q13480|Mod39|inactive]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y|active:Q13480(Gab1)|phosphorylation@527@Y:phosphorylation@659@Y|inactive,[EGFR|Mod0|active:EGF:GNAI1:GNAI3:Gab1|Mod39|inactive]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],pid_m_208367,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1,complex
+[P00533|Mod0:P01133:P62993:Q13480|Mod42:P20936|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y:P20936(RasGAP)|active,[EGFR|Mod0:EGF:GRB2:Gab1|Mod42:RasGAP|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2/GAB1/RasGAP{+}[itm],pid_m_208370,EGFR/EGFR/EGF/EGF/GRB2/GAB1/RasGAP,complex
+[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod39]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@527@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod39]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1{+}[itm],pid_m_208373,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1,complex
+[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42:P20936]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42:RasGAP]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP{+}[itm],pid_m_208374,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP,complex
+[P00533|Mod0:P01133:P63096:P08754:Q13480|Mod42:P20936|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q13480(Gab1)|phosphorylation@446@Y:phosphorylation@472@Y:phosphorylation@527@Y:phosphorylation@589@Y:phosphorylation@659@Y:P20936(RasGAP)|active,[EGFR|Mod0:EGF:GNAI1:GNAI3:Gab1|Mod42:RasGAP|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP{+}[itm],pid_m_208380,EGFR/EGFR/EGF/EGF/GNAI1/GNAI3/GAB1/RasGAP,complex
+[pid_m_200120:Q13153],,,[NCK1-2:PAK1],NCK1-2/PAK1,pid_m_208383,NCK1-2/PAK1,complex
+[P00533|Mod0:P00533|Mod63:P01133:pid_m_200120:Q13153]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P00533(EGFR)|phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGFR|Mod63:EGF:NCK1-2:PAK1]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/NCK1-2/PAK1{+}[itm],pid_m_208384,EGFR/EGFR/EGF/EGF/NCK1-2/PAK1,complex
+[P62993:Q13153],,,[GRB2:PAK1],GRB2/PAK1,pid_m_208386,GRB2/PAK1,complex
+[P00533|Mod0:P00533|Mod63:P01133:P62993:Q13153]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P00533(EGFR)|phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGFR|Mod63:EGF:GRB2:PAK1]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2/PAK1{+}[itm],pid_m_208387,EGFR/EGFR/EGF/EGF/GRB2/PAK1,complex
+[P62993:O00401],,,[GRB2:N-WASP],GRB2/N-WASP,pid_m_208389,GRB2/N-WASP,complex
+[P00533|Mod0:P01133:P62993:O00401]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF:GRB2:N-WASP]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/GRB2/N-WASP{+}[itm],pid_m_208390,EGFR/EGFR/EGF/EGF/GRB2/N-WASP,complex
+[P00533|Mod0:P01133:P19174|Mod19|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P19174(PLCgamma1)|phosphorylation@771@Y:phosphorylation@783@Y:phosphorylation@1253@Y|active,[EGFR|Mod0:EGF:PLCgamma1|Mod19|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/PLCgamma1{+}[itm],pid_m_208393,EGFR/EGFR/EGF/EGF/PLCgamma1,complex
+[P00533|Mod0:P01133:pid_m_202524]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod0:EGF:JAK1-JAK2]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/JAK1-JAK2{+}[itm],pid_m_208398,EGFR/EGFR/EGF/EGF/JAK1-JAK2,complex
+[P62993:Q07889|Mod49|inactive]@cytoplasm,,Q07889(SOS1)|phosphorylation@0@X|inactive,[GRB2:SOS1|Mod49|inactive]@cytoplasm,GRB2/SOS1[c],pid_m_208403,GRB2/SOS1,complex
+[P00533|Mod0:P01133:P29353|Mod59]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:P29353(p66 SHC)|phosphorylation@0@Y,[EGFR|Mod0:EGF:p66_SHC|Mod59]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/p66 SHC{+}[itm],pid_m_208411,EGFR/EGFR/EGF/EGF/p66 SHC,complex
+[P00533|Mod0|active:P01133]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y|active,[EGFR|Mod0|active:EGF]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF{+}[itm],pid_m_208413,EGFR/EGFR/EGF/EGF,complex
+[P29353|Mod4:P62993:Q07889|inactive]@cytoplasm,,P29353(p66 SHC)|phosphorylation@0@T:phosphorylation@0@S:phosphorylation@0@Y:Q07889(SOS1)|inactive,[p66_SHC|Mod4:GRB2:SOS1|inactive]@cytoplasm,p66 SHC/GRB2/SOS1[c],pid_m_208417,p66 SHC/GRB2/SOS1,complex
+[P00533|Mod0:P01133:Q05397|Mod16|active]|active@integral_to_membrane,,P00533(EGFR)|phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y:Q05397(FAK)|phosphorylation@397@Y|active,[EGFR|Mod0:EGF:FAK|Mod16|active]|active@integral_to_membrane,EGFR/EGFR/EGF/EGF/FAK{+}[itm],pid_m_208422,EGFR/EGFR/EGF/EGF/FAK,complex
+[P00533|Mod83:P01133]|inactive@integral_to_membrane,,P00533(EGFR)|phosphorylation@654@T:phosphorylation@1016@Y:phosphorylation@1069@Y:phosphorylation@1092@Y:phosphorylation@1110@Y:phosphorylation@1172@Y:phosphorylation@1197@Y,[EGFR|Mod83:EGF]|inactive@integral_to_membrane,EGFR/EGFR/EGF/EGF{-}[itm],pid_m_208428,EGFR/EGFR/EGF/EGF,complex
+[O60331|Mod67:Q9Y490],,O60331(PIP5K1C)|phosphorylation@639@Y,[PIP5K1C|Mod67:Talin],PIP5K1C/Talin,pid_m_208430,PIP5K1C/Talin,complex
+pid_m_208717,,,PI3K-gamma/p84,PI3K-gamma/p84,pid_m_208717,PI3K-gamma/p84,complex
+pid_m_208718,,,PI3K-gamma/p101,PI3K-gamma/p101,pid_m_208718,PI3K-gamma/p101,complex
+pid_m_208720,,,PI3K_p110-alpha/p85-beta,PI3K p110-alpha/p85-beta,pid_m_208720,PI3K p110-alpha/p85-beta,complex
+pid_m_208721,,,PI3K_p110-alpha/p55-gamma,PI3K p110-alpha/p55-gamma,pid_m_208721,PI3K p110-alpha/p55-gamma,complex
+pid_m_208723,,,PI3K_p110-beta/p55-gamma,PI3K p110-beta/p55-gamma,pid_m_208723,PI3K p110-beta/p55-gamma,complex
+pid_m_208724,,,PI3K_p110-beta/p85-beta,PI3K p110-beta/p85-beta,pid_m_208724,PI3K p110-beta/p85-beta,complex
+pid_m_208725,,,PI3K-delta,PI3K-delta,pid_m_208725,PI3K-delta,complex
+pid_m_208726,,,PI3K_p110-delta/p85-beta,PI3K p110-delta/p85-beta,pid_m_208726,PI3K p110-delta/p85-beta,complex
+pid_m_208727,,,PI3K_p110-delta/p55-gamma,PI3K p110-delta/p55-gamma,pid_m_208727,PI3K p110-delta/p55-gamma,complex
+Signaling_events_mediated_by_focal_adhesion_kinase,,,,Signaling_events_mediated_by_focal_adhesion_kinase,pid_p_200203,Signaling_events_mediated_by_focal_adhesion_kinase,
+ErbB1_downstream_signaling,,,,ErbB1_downstream_signaling,pid_p_200117,ErbB1_downstream_signaling,
+Internalization_of_ErbB1,,,,Internalization_of_ErbB1,pid_p_200154,Internalization_of_ErbB1,
+Posttranslational_regulation_of_adherens_junction_stability_and_dissassembly,,,,Posttranslational_regulation_of_adherens_junction_stability_and_dissassembly,pid_p_200103,Posttranslational_regulation_of_adherens_junction_stability_and_dissassembly,
+Signaling events mediated by focal adhesion kinase,,,,,,,pathway
+ErbB1 downstream signaling,,,,,,,pathway
+Internalization of ErbB1,,,,,,,pathway
+Posttranslational regulation of adherens junction stability and dissassembly,,,,,,,pathway

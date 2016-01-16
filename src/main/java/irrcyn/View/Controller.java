@@ -3,10 +3,8 @@ package irrcyn.View;
 
 
 import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
+import irrcyn.internal.MyTaskObserver;
 import irrcyn.internal.parser.ParserTask;
-
-import org.cytoscape.application.swing.CytoPanelComponent;
-import org.cytoscape.model.CyNetwork;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -14,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Iterator;
 
 import de.bioquant.cytoscape.pidfileconverter.Exceptions.FileParsingException;
 import de.bioquant.cytoscape.pidfileconverter.Exceptions.NoValidManagerSetException;
@@ -30,13 +27,13 @@ import de.bioquant.cytoscape.pidfileconverter.FileWriter.PreferredSymbolForUnipr
 import de.bioquant.cytoscape.pidfileconverter.FileWriter.SifFileWriter;
 import de.bioquant.cytoscape.pidfileconverter.FileWriter.UniprotIdForUniprotWithModWriter;
 import de.bioquant.cytoscape.pidfileconverter.FileWriter.MemberExpansion.SifFileExpandMolWriter;
-import de.bioquant.cytoscape.pidfileconverter.NodeManager.NodeManagerImpl;
 import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
 import org.cytoscape.task.read.LoadTableFileTaskFactory;
+import org.cytoscape.task.read.LoadVizmapFileTaskFactory;
 import org.cytoscape.work.TaskIterator;
 import org.cytoscape.work.TaskManager;
-import org.cytoscape.work.TaskObserver;
-import org.omg.CORBA.OBJ_ADAPTER;
+
+import static java.lang.Thread.sleep;
 
 /**
 
@@ -48,11 +45,10 @@ import org.omg.CORBA.OBJ_ADAPTER;
  */
 @SuppressWarnings("serial")
 public class Controller extends JFrame implements ActionListener{
-	
-	// boolean to set if convertbutton is pressed
-	private boolean isConverted = false;
+
 	private MainFrame mainframe;
 	private String inputfilepath;
+
 	private static String inputbarcode1;
 	private static String inputbarcode2;
 	private static String targetSIFpath;
@@ -68,36 +64,38 @@ public class Controller extends JFrame implements ActionListener{
 	private static String targetUniqueUniProtFilepath;
 	private static String targetUniProtToGeneIDMapFilepath;
 	private static String targetGeneIDtoAffymetrixMapFilepath;
+
 	private File curFile = null; 
-	private File barcode1File = null;
-	private File barcode2File = null;
-	private File genesourceFile = null;
-	private File genetargetFile = null;
-	private File sigmolsourceFile = null;
-	private File sigmoltargetFile = null;
+
+	// Cytoscape
 	private TaskManager tm;
 	private LoadNetworkFileTaskFactory ldn;
 	private LoadTableFileTaskFactory ldt;
+	private LoadVizmapFileTaskFactory lds;
+	private TaskIterator itr;
+	private ParserTask parserTask;
 
 
-	// the file name of the VIZMAP property file
-	private static final String VIZMAP_PROPS_FILE_NAME = "netView.props";
-	// the file concatenation of the (filtered_absent_proteins)
-	private static final String ABSENT_PROTEINS_CONCATENATION = "(filtered_absent_proteins)";
-	private static final String SUBGRAPHED = "(subgraphed)";
+	// the output directory
+	private String dir;
+
+	private String outputMessage;
+
 	/**
 	 * The constructor for the mainframe controller
 	 * @param mainframe
 	 * @param tm
 	 * @param ldn
 	 * @param ldt
+	 * @param lds
 	 */
-	public Controller(MainFrame mainframe, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt)
+	public Controller(MainFrame mainframe, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt, LoadVizmapFileTaskFactory lds)
 	{
 		this.mainframe = mainframe;
 		this.tm = tm;
 		this.ldn=ldn;
 		this.ldt=ldt;
+		this.lds = lds;
 	}
 
 	/**
@@ -117,203 +115,127 @@ public class Controller extends JFrame implements ActionListener{
 		if (command.equals("Output")) {
 			browseOutputFilePath();
 		}
-
 		// if user runs the convert button
 		if (command.equals("Convert")) {
-			//checks if the user has typed a file path into the input textfield. if not, alert!
-			if (mainframe.getInputTextfieldText().equals("")) {
+			// do a read of the inputtextfield to determine file
+			inputfilepath = mainframe.getInputTextfieldText().trim();;
+			// set this filepath in the File object
+			curFile = new File(inputfilepath);
+
+			try {
+				convertFile();
+			} catch (Exception exp) {
 				JOptionPane
 						.showMessageDialog(new JFrame(),
-								"Please enter a file using the browse button above",
+								"Problem when trying to generate the SIF : \n" + exp.toString(),
 								"Warning", JOptionPane.WARNING_MESSAGE);
-			} else if (!mainframe.getInputTextfieldText().equals("")) {
-				// do a read of the inputtextfield to determine file
-				String filetobeconverted = mainframe.getInputTextfieldText().trim();
-				inputfilepath = filetobeconverted;
-				// set this filepath in the File object
-				curFile = new File(inputfilepath);
-
-				//-------------------------------------------------------
-				if (curFile.getAbsolutePath().endsWith("xml")) {
-					// targetSIFpath is set here by default
-					String[] temporarypath = curFile.getAbsolutePath().split(".xml");
-					setTargetSIFpath(temporarypath[0].concat(".sif"));
-					setTargetCSVpath(temporarypath[0].concat(".csv"));
-				}
-				if (curFile.getAbsolutePath().endsWith("sif")) {
-					// targetSIFpath is set here by default
-					setTargetSIFpath(curFile.getAbsolutePath());
-				}
-
-//				// create the splashframe
-//				SplashFrame sp = new SplashFrame();
-//				sp.setTitle("Please Wait a Moment...");
-//				sp.setLocation(100, 100);
-//				sp.setSize(500, 100);
-//				sp.setResizable(false);
-//				sp.setVisible(true);
-				try {
-					//setfocus on this frame
-					///sp.requestFocus();
-					// converting a file which is displayed in the inputtextfield JTextfield field in mainframe
-					convertFile(filetobeconverted);
-					isConverted = true;
-				} catch (NullPointerException exp) {
-					JOptionPane
-							.showMessageDialog(new JFrame(),
-									"Please enter a file using the browse button above",
-									"Warning", JOptionPane.WARNING_MESSAGE);
-					exp.printStackTrace();
-				}
-				try {
-					ParserTask parserTask = new ParserTask(getTargetCSVpath(),getTargetPIDpath(), getTargetNODE_TYPEpath(), getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
-							getTargetPREFERRED_SYMBOLpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetID_PREFpath());
-
-
-					File SIFFile = new File(getTargetSIFpath());
-					File CSVFile = new File(parserTask.getTargetCSV());
-
-					TaskIterator itr = ldn.createTaskIterator(SIFFile);
-					itr.append(parserTask);
-					itr.append(ldt.createTaskIterator(CSVFile));
-
-					tm.execute(itr);
-//					loadNodeAttributeFile(parserTask.getTargetCSV());
-
-//
-//					sp.setTitle("Network loaded, now loading visualisation...");
-//					// load the VIZMAP props file
-//					//mapVisually(VIZMAP_PROPS_FILE_NAME);
-//
-//					// change the title of the splash frame
-//					sp.setTitle("Visualisation loaded, this window closes automatically.");
-//
-//					// displaying a successful conversion message
-//					String filepath = getTargetSIFpath();
-//					JOptionPane
-//							.showMessageDialog(new JFrame(),
-//									"Conversion successful! Files converted are located in the directory:"
-//											+ "\n" + filepath,
-//									"Success", JOptionPane.INFORMATION_MESSAGE);
-				} catch (Exception exp) {
-					JOptionPane
-							.showMessageDialog(new JFrame(),
-									"The graph cannot be read! : " + exp.toString(),
-									"Warning", JOptionPane.WARNING_MESSAGE);
-				} finally {
-					mainframe.requestFocus();
-				}
+				exp.printStackTrace();
 			}
+			try {
+				parserTask = new ParserTask(getTargetCSVpath(),getTargetPIDpath(), getTargetNODE_TYPEpath(), getTargetUNIPROTpath(), getTargetMODIFICATIONSpath(),
+						getTargetPREFERRED_SYMBOLpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetPREFERRED_SYMBOL_EXTpath(), getTargetID_PREFpath());
+
+				File SIFFile = new File(getTargetSIFpath());
+				MyTaskObserver myTaskObserver = new MyTaskObserver(mainframe, tm, ldt, parserTask);
+
+				itr = ldn.createTaskIterator(SIFFile);
+				itr.append(parserTask);
+				tm.execute(itr, myTaskObserver);
+			} catch (Exception exp) {
+				JOptionPane
+						.showMessageDialog(new JFrame(),
+								"The graph cannot be read! : " + exp.toString(),
+								"Warning", JOptionPane.WARNING_MESSAGE);
+			} finally {
+				mainframe.requestFocus();
+			}
+
 
 		}
 	}
-
-	/**
-	 * This method creates a network graph from the string 's',
-	 * which should be a path to a Cytoscape readable file, e.g. SIF
-	 * @param s the path of the file to be read.
-	 */
-	private void drawGraphFromSIF(String s)
-	{
-		File file = new File(s);
-		tm.execute(ldn.createTaskIterator(file));
-	}
-
-	/**
-	 * This method loads the attribute NA files
-	 * @param s the path of the NA file to be loaded
-	 */
-	private void loadNodeAttributeFile(String s)
-	{
-		File file = new File(s);
-		tm.execute(ldt.createTaskIterator(file));
-	}
-
-
-	/**
-	 * This method loads the vizmap property file and redraws the graph
-	 * Also does the layout hierarchically and rotates the graph 180 degrees
-	 * @param s the name of the vizmap property file
-	 */
-//	private void mapVisually(String s)
-//	{
-//		//load the vizmap file
-//		Cytoscape.firePropertyChange(Cytoscape.VIZMAP_LOADED, null, s);
-//		VisualStyle vs = Cytoscape.getVisualMappingManager().getCalculatorCatalog().getVisualStyle("netView");
-//		Cytoscape.getCurrentNetworkView().setVisualStyle(vs.getName()); // not strictly necessary
-//
-//		// actually apply the visual style
-//		Cytoscape.getVisualMappingManager().setVisualStyle(vs);
-//		Cytoscape.getCurrentNetworkView().redrawGraph(true,true);
-//
-//		// TODO: should ask user whether he wants this? set the layout as hierarchical
-//		CyLayouts.getLayout("hierarchical").doLayout();
-//		if(Cytoscape.getCurrentNetwork().getNodeCount()<1000)
-//		{
-//			// TODO: sometimes rotating the graph causes some crash errors. thus only rotate if hierarchichal layout!
-//			//rotateGraph();
-//		}
-//	}
 
 	/**
 	 * This method gets the filepath from the input file text area and then converts that xml file into SIF files
-	 * @param filepath
 	 */
-	private void convertFile(String filepath)
-	{
+	private void convertFile() throws Exception {
+		// Inform the user that we're working
+		mainframe.isLoading();
+		outputMessage = "Starting conversion...";
+
+		// ---------- Setting the output
+		// *** Creating the dir
 
 		// if the outputfiletextfield is empty, output file folder is same as input file's
-		if(mainframe.getOutputTextfieldText().trim().equals(""))
-		{
+		if(mainframe.getOutputTextfieldText().trim().equals("")) {
 			String[] temporarypath = null;
-			// if a file with xml ending
-			if(curFile.getAbsolutePath().endsWith("xml"))
-			{
-				// set the SIF file path
-				temporarypath = curFile.getAbsolutePath().split(".xml");
-				setTargetSIFpath(temporarypath[0].concat(".sif"));
-				setTargetCSVpath(temporarypath[0].concat(".csv"));
-			}
-			if(curFile.getAbsolutePath().endsWith("sif"))
-			{
-				temporarypath = curFile.getAbsolutePath().split(".sif");
-				setTargetSIFpath(curFile.getAbsolutePath());
-				// for loading of pre-filtered SIF files
-				if(curFile.getAbsolutePath().contains(getAbsentProteinsConcatenation()))
-				{
-					temporarypath[0] = temporarypath[0].replace(getAbsentProteinsConcatenation(), "");
-				}
-				// for loading of pre-subgraphed SIF files
-				if(curFile.getAbsolutePath().contains(getSubgraphed()))
-				{
-					temporarypath[0] = temporarypath[0].replace(getSubgraphed(), "");
-				}
-			}
-			// set the target node type NA path
-			setTargetNODE_TYPEpath(temporarypath[0].concat(".NODE_TYPE.NA"));
-			// set the UNIPROT NA path
-			setTargetUNIPROTpath(temporarypath[0].concat(".UNIPROT.NA"));
-			// set the MODIFICATIONS NA path
-			setTargetMODIFICATIONSpath(temporarypath[0].concat(".MODIFICATIONS.NA"));
-			// set the PREFERRED_SYMBOL NA path
-			setTargetPREFERRED_SYMBOLpath(temporarypath[0].concat(".PREFERRED_SYMBOL.NA"));
-			// set the PREFERRED_SYMBOL_EXT NA path
-			setTargetPREFERRED_SYMBOL_EXTpath(temporarypath[0].concat(".PREFERRED_SYMBOL_EXT.NA"));
-			// set the PID NA path
-			setTargetPIDpath(temporarypath[0].concat(".PID.NA"));
-			// set the ID_PREF NA path
-			setTargetID_PREFpath(temporarypath[0].concat(".ID_PREF.NA"));
-			// set the IDCytoUniProtFile path
-			setTargetIDCytoUniProtFilepath(temporarypath[0].concat(".IDCytoToUniProt.NA"));
-			// set the UniqueUniProtFile path
-			setTargetUniqueUniProtFilepath(temporarypath[0].concat(".UNIQUEUNIPROT.NA"));
-			// set the UniProt to GeneID map file path
-			setTargetUniProtToGeneIDMapFilepath(temporarypath[0].concat(".UPToGeneIDMap.NA"));
-			// set the GeneID to Affymetrix map file path
-			setTargetGeneIDtoAffymetrixMapFilepath(temporarypath[0].concat(".GeneIDToAffyMap.NA"));
+			temporarypath = curFile.getAbsolutePath().split(".xml");
+			dir = temporarypath[0];
 
+			outputMessage += '\n' + "No output fuilled, same directory as input will be used";
 		}
-		this.inputfilepath = filepath;
+		else{
+			try {
+				File f = new File(mainframe.getOutputTextfieldText());
+
+				// if the selected is a directory
+				if(f.isDirectory())
+				{
+					// split the file name
+					String[] temporarypath = curFile.getName().split(".xml");
+
+					dir = f.getAbsolutePath() + File.separator + temporarypath[0];
+
+				}
+				else if(f.getAbsolutePath().endsWith("sif"))
+				{
+					String[] temporarypath = f.getAbsolutePath().split(".sif");
+					dir = temporarypath[0];
+				}
+				else if(f.getAbsolutePath().endsWith("csv"))
+				{
+					String[] temporarypath = f.getAbsolutePath().split(".csv");
+					dir = temporarypath[0];
+				}
+				else{
+					throw new Exception("Invalid output : directory, SIF file or CSV file expected");
+				}
+			} catch (NullPointerException nullExp){
+				outputMessage += '\n' + "No output fuilled, same directory as input will be used";
+			}
+		}
+
+
+		// *** Setting the targets
+		setTargetSIFpath(dir.concat(".sif"));
+		setTargetCSVpath(dir.concat(".csv"));
+		// set the target node type NA path
+		setTargetNODE_TYPEpath(dir.concat(".NODE_TYPE.NA"));
+		// set the UNIPROT NA path
+		setTargetUNIPROTpath(dir.concat(".UNIPROT.NA"));
+		// set the MODIFICATIONS NA path
+		setTargetMODIFICATIONSpath(dir.concat(".MODIFICATIONS.NA"));
+		// set the PREFERRED_SYMBOL NA path
+		setTargetPREFERRED_SYMBOLpath(dir.concat(".PREFERRED_SYMBOL.NA"));
+		// set the PREFERRED_SYMBOL_EXT NA path
+		setTargetPREFERRED_SYMBOL_EXTpath(dir.concat(".PREFERRED_SYMBOL_EXT.NA"));
+		// set the PID NA path
+		setTargetPIDpath(dir.concat(".PID.NA"));
+		// set the ID_PREF NA path
+		setTargetID_PREFpath(dir.concat(".ID_PREF.NA"));
+		// set the IDCytoUniProtFile path
+		setTargetIDCytoUniProtFilepath(dir.concat(".IDCytoToUniProt.NA"));
+		// set the UniqueUniProtFile path
+		setTargetUniqueUniProtFilepath(dir.concat(".UNIQUEUNIPROT.NA"));
+		// set the UniProt to GeneID map file path
+		setTargetUniProtToGeneIDMapFilepath(dir.concat(".UPToGeneIDMap.NA"));
+		// set the GeneID to Affymetrix map file path
+		setTargetGeneIDtoAffymetrixMapFilepath(dir.concat(".GeneIDToAffyMap.NA"));
+
+		// For the user
+		outputMessage += '\n' + "Target for conversion : " + dir;
+		mainframe.setTextToOutputText(dir);
+
+		// ----------------- Converting
 		if(inputfilepath.endsWith("xml"))
 		{
 			NodeManagerImpl manager = NodeManagerImpl.getInstance();
@@ -429,17 +351,9 @@ public class Controller extends JFrame implements ActionListener{
 			}
 
 		}
-		else if(inputfilepath.endsWith("sif"))
+		else // not an xml
 		{
-
-		}
-		else // not an xml or SIF file
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"File parse error. Make sure you have selected a valid xml file downloaded from Protein Interaction Database.",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-
+			throw new Exception("Invalid input : .xml expected");
 		}
 	}
 
@@ -453,29 +367,15 @@ public class Controller extends JFrame implements ActionListener{
 			JFileChooser fc = new JFileChooser(".");
 			fc.setDialogTitle("Please choose an XML file");
 			FileNameExtensionFilter xmldata = new FileNameExtensionFilter("XML", "xml");
-			FileNameExtensionFilter sifdata = new FileNameExtensionFilter("SIF", "xml");
 			fc.addChoosableFileFilter(xmldata);
-			fc.addChoosableFileFilter(sifdata);
 
 			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
 			// get name und path
 			if(returnVal == JFileChooser.APPROVE_OPTION)
 			{
 				curFile = fc.getSelectedFile();
-				if(curFile.getAbsolutePath().endsWith("xml"))
-				{
-					inputfilepath = curFile.getAbsolutePath();
-					mainframe.setInputFileText(inputfilepath);
-
-					// targetSIFpath is set here by default
-					String[] temporarypath = curFile.getAbsolutePath().split(".xml");
-					setTargetSIFpath(temporarypath[0].concat(".sif"));
-				}
-				if(curFile.getAbsolutePath().endsWith("sif"))
-				{
-					inputfilepath = curFile.getAbsolutePath();
-					mainframe.setInputFileText(inputfilepath);
-				}
+				inputfilepath = curFile.getAbsolutePath();
+				mainframe.setInputFileText(inputfilepath);
 			}
 
 		}
@@ -511,95 +411,7 @@ public class Controller extends JFrame implements ActionListener{
 			// get name und path
 			if(returnVal == JFileChooser.APPROVE_OPTION)
 			{
-				// if the selected is a directory
-				if(fc.getSelectedFile().isDirectory())
-				{
-					// get the absolute path of the directory in which the file lies
-					filepath = fc.getSelectedFile().getAbsolutePath();
-					// split the file name
-					String[] temporarypath = curFile.getName().split(".xml");
-
-					// set the target SIF path
-					setTargetSIFpath(filepath.concat("\\").concat(temporarypath[0].concat(".sif")));
-
-					// set the target node type NA path
-					setTargetNODE_TYPEpath(filepath.concat("\\").concat(temporarypath[0].concat(".NODE_TYPE.NA")));
-
-					// set the target uniprot NA path
-					setTargetUNIPROTpath(filepath.concat("\\").concat(temporarypath[0].concat(".UNIPROT.NA")));
-
-					// set the target MODIFICATIONS NA path
-					setTargetMODIFICATIONSpath(filepath.concat("\\").concat(temporarypath[0].concat(".MODIFICATIONS.NA")));
-
-					// set the target PREFERRED_SYMBOLpath NA path
-					setTargetPREFERRED_SYMBOLpath(filepath.concat("\\").concat(temporarypath[0].concat(".PREFERRED_SYMBOL.NA")));
-
-					// set the target PREFERRED_SYMBOL_EXTpath NA path
-					setTargetPREFERRED_SYMBOL_EXTpath(filepath.concat("\\").concat(temporarypath[0].concat(".PREFERRED_SYMBOL_EXT.NA")));
-
-					// set the target PID NA path
-					setTargetPIDpath(filepath.concat("\\").concat(temporarypath[0].concat(".PID.NA")));
-
-					// set the target ID_PREF NA path
-					setTargetID_PREFpath(filepath.concat("\\").concat(temporarypath[0].concat(".ID_PREF.NA")));
-
-					// set the IDCytoUniProtFile path
-					setTargetIDCytoUniProtFilepath(filepath.concat("\\").concat(temporarypath[0].concat(".IDCytoToUniProt.NA")));
-
-					// set the UniqueUniProtFile path
-					setTargetUniqueUniProtFilepath(filepath.concat("\\").concat(temporarypath[0].concat(".UNIQUEUNIPROT.NA")));
-
-					// set the UniProt to GeneID map file path
-					setTargetUniProtToGeneIDMapFilepath(filepath.concat("\\").concat(temporarypath[0].concat(".UPToGeneIDMap.NA")));
-
-					// set the GeneID to Affymetrix map file path
-					setTargetGeneIDtoAffymetrixMapFilepath(filepath.concat("\\").concat(temporarypath[0].concat(".GeneIDToAffyMap.NA")));
-
-				}
-				else // if the selected is a file
-				{
-					// get the directory path
-					filedirectory = fc.getCurrentDirectory().getAbsolutePath();
-					// split the current file into one without .xml
-					String[] temporarypath = curFile.getName().split(".xml");
-
-					// set the target SIF path
-					setTargetSIFpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".sif"));
-
-					// set the target node type NA path
-					setTargetNODE_TYPEpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".NODE_TYPE.NA"));
-
-					// set the target uniprot NA path
-					setTargetUNIPROTpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".UNIPROT.NA"));
-
-					// set the target MODIFICATIONS NA path
-					setTargetMODIFICATIONSpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".MODIFICATIONS.NA"));
-
-					// set the target PREFERRED_SYMBOLpath NA path
-					setTargetPREFERRED_SYMBOLpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".PREFERRED_SYMBOL.NA"));
-
-					// set the target PREFERRED_SYMBOL_EXTpath NA path
-					setTargetPREFERRED_SYMBOL_EXTpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".PREFERRED_SYMBOL_EXT.NA"));
-
-					// set the target PID NA path
-					setTargetPIDpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".PID.NA"));
-
-					// set the target ID_PREF NA path
-					setTargetID_PREFpath(filedirectory.concat("\\").concat(temporarypath[0]).concat(".ID_PREF.NA"));
-
-					// set the IDCytoUniProtFile path
-					setTargetIDCytoUniProtFilepath(filedirectory.concat("\\").concat(temporarypath[0].concat(".IDCytoToUniProt.NA")));
-
-					// set the UniqueUniProtFile path
-					setTargetUniqueUniProtFilepath(filedirectory.concat("\\").concat(temporarypath[0].concat(".UNIQUEUNIPROT.NA")));
-
-					// set the UniProt to GeneID map file path
-					setTargetUniProtToGeneIDMapFilepath(filedirectory.concat("\\").concat(temporarypath[0].concat(".UPToGeneIDMap.NA")));
-
-					// set the GeneID to Affymetrix map file path
-					setTargetGeneIDtoAffymetrixMapFilepath(filedirectory.concat("\\").concat(temporarypath[0].concat(".GeneIDToAffyMap.NA")));
-				}
-				mainframe.setOutputTextfieldText(targetSIFpath);
+				mainframe.setOutputTextfieldText(fc.getSelectedFile().getAbsolutePath());
 			}
 
 		}
@@ -607,128 +419,12 @@ public class Controller extends JFrame implements ActionListener{
 		{
 			JOptionPane
 					.showMessageDialog(new JFrame(),
-							"Please select a valid xml file downloaded from Protein Interaction Database.",
+							"Problem when trying to choose an output : " + e.toString(),
 							"Warning", JOptionPane.WARNING_MESSAGE);
 			e.printStackTrace();
 		}
 	}
 
-
-	/**
-	 * This method opens a browsing window so the user can select a gene source file
-	 */
-	private void browseGeneSource()
-	{
-		try
-		{
-			JFileChooser fc = new JFileChooser(".");
-			fc.setDialogTitle("Please choose a text file");
-
-			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
-			// get name und path
-			if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				genesourceFile = fc.getSelectedFile();
-				// put the absolute path in the textfield
-				mainframe.setGenesourcetextfieldText(genesourceFile.getAbsolutePath());
-			}
-		}
-		catch (Exception e)
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"Please select a Text file",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * This method opens a browsing window so the user can select a gene target file
-	 */
-	private void browseGeneTarget()
-	{
-		try
-		{
-			JFileChooser fc = new JFileChooser(".");
-			fc.setDialogTitle("Please choose a text file");
-
-			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
-			// get name und path
-			if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				genetargetFile = fc.getSelectedFile();
-				// put the absolute path in the textfield
-				mainframe.setGenetargettextfieldText(genetargetFile.getAbsolutePath());
-			}
-		}
-		catch (Exception e)
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"Please select a Text file",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * This method opens a browsing window so the user can select a sigmol source file
-	 */
-	private void browseSigmolSource()
-	{
-		try
-		{
-			JFileChooser fc = new JFileChooser(".");
-			fc.setDialogTitle("Please choose a text file");
-
-			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
-			// get name und path
-			if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				sigmolsourceFile = fc.getSelectedFile();
-				// put the absolute path in the textfield
-				mainframe.setSigmolsourcetextfieldText(sigmolsourceFile.getAbsolutePath());
-			}
-		}
-		catch (Exception e)
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"Please select a Text file",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * This method opens a browsing window so the user can select a s file
-	 */
-	private void browseSigmolTarget()
-	{
-		try
-		{
-			JFileChooser fc = new JFileChooser(".");
-			fc.setDialogTitle("Please choose a text file");
-
-			int returnVal = fc.showOpenDialog(this); // shows the dialog of the file browser
-			// get name und path
-			if(returnVal == JFileChooser.APPROVE_OPTION)
-			{
-				sigmoltargetFile = fc.getSelectedFile();
-				// put the absolute path in the textfield
-				mainframe.setSigmoltargettextfieldText(sigmoltargetFile.getAbsolutePath());
-			}
-		}
-		catch (Exception e)
-		{
-			JOptionPane
-					.showMessageDialog(new JFrame(),
-							"Please select a Text file",
-							"Warning", JOptionPane.WARNING_MESSAGE);
-			e.printStackTrace();
-		}
-	}
 
 	public String getTargetSIFpath()
 	{
@@ -870,13 +566,6 @@ public class Controller extends JFrame implements ActionListener{
 		this.inputbarcode2 = inputbarcode2;
 	}
 
-	public static String getAbsentProteinsConcatenation() {
-		return ABSENT_PROTEINS_CONCATENATION;
-	}
-
-	public static String getSubgraphed() {
-		return SUBGRAPHED;
-	}
 
 	public void setTargetCSVpath(String targetCSVpath) {
 		this.targetCSVpath = targetCSVpath;

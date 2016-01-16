@@ -89,7 +89,7 @@ public class ParserTask extends AbstractTask {
                     if (node.getAttributes().containsKey(attribute)) {
                         pw.print("," + node.getAttributes().get(attribute));
                     } else {
-                        pw.print("");
+                        pw.print(",");
                     }
                 }
                 pw.print('\n');
@@ -112,5 +112,10 @@ public class ParserTask extends AbstractTask {
         File f = new File(targetCSV);
         //return targetCSV;
         return f.getAbsolutePath();
+    }
+    public String getName() {
+        File f = new File(targetCSV);
+        //return targetCSV;
+        return f.getName();
     }
 }

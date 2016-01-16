@@ -4,10 +4,13 @@ import org.cytoscape.application.swing.CytoPanelComponent;
 import org.cytoscape.application.swing.CytoPanelName;
 import org.cytoscape.task.read.LoadNetworkFileTaskFactory;
 import org.cytoscape.task.read.LoadTableFileTaskFactory;
+import org.cytoscape.task.read.LoadVizmapFileTaskFactory;
+import org.cytoscape.work.FinishStatus;
 import org.cytoscape.work.TaskManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame implements CytoPanelComponent{
@@ -45,8 +48,10 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 	private JScrollPane cytoidsourcescrollpane;
 	private JScrollPane cytoidtargetscrollpane;
 	private JButton browsebutton = new JButton("Browse");
-	private JButton outputbutton = new JButton("Output");
-	private JButton convertbutton = new JButton("Convert :)");
+	private JButton outputbutton = new JButton("Browse");
+	private JButton convertbutton = new JButton("Convert to SIF");
+	private JButton loadTableButton = new JButton("Load Table");
+	private JButton loadStyleButton = new JButton("Load Style");
 	private JButton choosebutton = new JButton("Choose");
 	private JButton genesourcebrowsebutton = new JButton("Browse");
 	private JButton genetargetbrowsebutton = new JButton("Browse");
@@ -60,11 +65,12 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 	private JCheckBox illuminacheckbox = new JCheckBox();
 	private JCheckBox includecomplexescheckbox = new JCheckBox();
 
+	private JLabel success;
+	GridBagConstraints c = new GridBagConstraints();
+	private String dir;
 
-	
-	
-	public MainFrame(Controller controller, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt) throws Exception{
-		controller = new Controller(this, tm, ldn, ldt);
+	public MainFrame(Controller controller, TaskManager tm, LoadNetworkFileTaskFactory ldn, LoadTableFileTaskFactory ldt, LoadVizmapFileTaskFactory lds) throws Exception{
+		controller = new Controller(this, tm, ldn, ldt, lds);
 		expandcheckboxlabel.setFont(new Font("Ariel", Font.ITALIC, 8));
 		expandcheckboxlabel.setText("Check to expand");
 		mainpanel.setLayout(new GridBagLayout());
@@ -74,7 +80,7 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		middlepanel.setLayout(new GridBagLayout());
 		bottomtitlepanel.setLayout(new GridBagLayout());
 		bottompanel.setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
+
 		/* ------------------------------------------------------ */
 		// setting the number label and adding it to toptitlepanel
 		numberonelabel.setText("Step 1: Generate Network from PID");
@@ -89,7 +95,7 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 	    toptitlepanel.add(numberonelabel, c);
 		/* ------------------------------------------------------ */
 		// adding the inputfilename label to toppanel
-	    inputfilenamelabel.setText("Select input file (XML/SIF):");
+	    inputfilenamelabel.setText("Select input file (XML):");
 		c.weightx = 0.5;
 		c.gridwidth = 1;
 		c.ipady = 5;
@@ -105,24 +111,26 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		/* ------------------------------------------------------ */
 		// adding the convertbutton to toppanel and adding action commands/listener
 		c.gridx = 2;
-		c.gridy = 2;
+		c.gridy = 4;
+
 		toppanel.add(convertbutton, c);
 		convertbutton.setActionCommand("Convert");
 		convertbutton.addActionListener(controller);
+
+//		/* ------------------------------------------------------ */
+//		// adding the expandcheckbox label to toppanel
+//		c.gridx = 3;
+//		c.gridy = 0;
+//		toppanel.add(expandcheckboxlabel, c);
 		/* ------------------------------------------------------ */
-		// adding the expandcheckbox label to toppanel
-		c.gridx = 3;
-		c.gridy = 0;
-		toppanel.add(expandcheckboxlabel, c);
-		/* ------------------------------------------------------ */
-		// adding the check to expand help button to toppanel
-		c.gridx = 4;
-		c.gridy = 0;
-		c.ipady = 0;
-		c.ipadx = 0;
-		toppanel.add(checktoexpandhelpbutton, c);
-		checktoexpandhelpbutton.setActionCommand("Check to expand help");
-		checktoexpandhelpbutton.addActionListener(controller);
+//		// adding the check to expand help button to toppanel
+//		c.gridx = 4;
+//		c.gridy = 0;
+//		c.ipady = 0;
+//		c.ipadx = 0;
+//		toppanel.add(checktoexpandhelpbutton, c);
+//		checktoexpandhelpbutton.setActionCommand("Check to expand help");
+//		checktoexpandhelpbutton.addActionListener(controller);
 		/* ------------------------------------------------------ */
 		// adding the emptylabel to toppanel
 		c.gridx = 5;
@@ -148,18 +156,17 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		toppanel.add(browsebutton, c);
 		browsebutton.setActionCommand("Browse");
 		browsebutton.addActionListener(controller);
-		/* ------------------------------------------------------ */
-		// adding the expandcheckbox to toppanel
-		c.gridx = 3;
-		c.gridy = 1;
-		toppanel.add(expandcheckbox, c);
+//		/* ------------------------------------------------------ */
+//		// adding the expandcheckbox to toppanel
+//		c.gridx = 3;
+//		c.gridy = 1;
+//		toppanel.add(expandcheckbox, c);
 		/* ------------------------------------------------------ */
 		// adding the outputbutton to toppanel and adding action commands/listener
 		c.gridx = 2;
 		c.gridy = 1;
 		toppanel.add(outputbutton, c);
 		outputbutton.setActionCommand("Output");
-		outputbutton.setEnabled(false);
 		outputbutton.addActionListener(controller);
 		/* ------------------------------------------------------ */
 		// Set the middle
@@ -462,12 +469,12 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		
 		// Because the application is not yet completely ported
 
-		// Output doesnt work
-		expandcheckbox.setEnabled(false);
-		outputtextfield.setEnabled(false);
-		outputbutton.setEnabled(false);
-		outputfilenamelabel.setEnabled(false);
-		checktoexpandhelpbutton.setEnabled(false);
+//		// Output doesnt work
+//		expandcheckbox.setEnabled(false);
+//		outputtextfield.setEnabled(false);
+//		outputbutton.setEnabled(false);
+//		outputfilenamelabel.setEnabled(false);
+//		checktoexpandhelpbutton.setEnabled(false);
 
 		// add the main panel to the content pane
 		getContentPane().add(mainpanel);
@@ -475,7 +482,35 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 	    setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 	}
-
+//
+//	/**
+//	 * Add a loading Gif next to the button designed by where
+//	 * @param where 0, 1 or 2 for Convert, Load Table and Load Style
+//     */
+//	public void addLoadingGif(int where){
+//		// loading button
+//		c.gridx = 5;
+//		c.gridy = where;
+//		classLoader = getClass().getClassLoader();
+//		ImageIcon gif = new ImageIcon(classLoader.getResource("loading.gif"));
+//		loading = new JLabel(gif);
+//		loading.
+//		toppanel.add(loading, c);
+//	}
+	public void isLoading(){
+		convertbutton.setText("Conversion in progress...");
+		convertbutton.setEnabled(false);
+	}
+	public void finishedLoading(String name){
+		convertbutton.setText("Convert");
+		convertbutton.setEnabled(true);
+		c.gridx = 0;
+		c.gridy = 4;
+		c.gridwidth=2;
+		success = new JLabel(name + ": Conversion successful to  : \n" + dir) ;
+		success.setForeground(new Color(0,130,30));
+		toppanel.add(success, c);
+	}
 	public boolean isExpandChecked()
 	{
 		return expandcheckbox.isSelected();
@@ -526,9 +561,9 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 		return inputtextfield.getText();
 	}
 	
-	public void setTextToOutputText(String arg0)
+	public void setTextToOutputText(String outputText)
 	{
-		this.convertbutton.setText(arg0);
+		this.dir = outputText;
 	}
 	
 	public JTextField getInputtext()
@@ -599,6 +634,14 @@ public class MainFrame extends JFrame implements CytoPanelComponent{
 	public void setSigmoltargettextfieldText(String arg)
 	{
 		this.sigmoltargettextfield.setText(arg);
+	}
+
+	public JButton getLoadTableButton() {
+		return loadTableButton;
+	}
+
+	public JButton getLoadStyleButton() {
+		return loadStyleButton;
 	}
 
 	@Override
